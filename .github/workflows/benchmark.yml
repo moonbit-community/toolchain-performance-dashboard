@@ -1,0 +1,135 @@
+name: Benchmark
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: moonbit-toolchain-benchmark-data
+  cancel-in-progress: false
+
+jobs:
+  benchmark:
+    name: Benchmark (${{ matrix.id }})
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - id: ubuntu
+            runner: ubuntu-24.04
+          - id: windows
+            runner: windows-2025
+          - id: macos
+            runner: macos-15
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 90
+    env:
+      MOONC_RC_CONVENTION: borrow
+    steps:
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+
+      - name: Check out fixed core revision
+        uses: actions/checkout@v4
+        with:
+          repository: moonbitlang/core
+          ref: 50c136025f4385ab131d82e68d79ebdd46ce50c2
+          path: benchmark-core
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dashboard dependencies
+        run: npm ci
+
+      - name: Run paired benchmark
+        run: >-
+          npm run benchmark --
+          --os ${{ matrix.id }}
+          --core-dir benchmark-core
+          --output artifacts/shard-${{ matrix.id }}.json
+          --temp-dir "${{ runner.temp }}/moonbit-toolchain-benchmark"
+
+      - name: Upload OS shard
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-${{ matrix.id }}
+          path: artifacts/shard-${{ matrix.id }}.json
+          if-no-files-found: error
+          retention-days: 14
+
+  publish:
+    name: Validate and publish data
+    if: always()
+    needs: benchmark
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fast-forward to current main
+        run: git pull --ff-only origin main
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dashboard dependencies
+        run: npm ci
+
+      - name: Download all benchmark shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: benchmark-*
+          path: ${{ runner.temp }}/benchmark-shards
+          merge-multiple: true
+
+      - name: Aggregate and validate V1 data
+        id: aggregate
+        run: >-
+          npm run aggregate --
+          --artifacts-dir "${{ runner.temp }}/benchmark-shards"
+          --data-dir public/data
+
+      - name: Validate complete public history
+        run: npm run validate:data
+
+      - name: Commit benchmark data
+        env:
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          if git diff --cached --quiet; then
+            echo "Run ${RUN_ID}/${RUN_ATTEMPT} is already present."
+          else
+            git commit -m "data: benchmark run ${RUN_ID} attempt ${RUN_ATTEMPT}"
+            git push origin HEAD:main
+          fi
+
+      - name: Report unhealthy benchmark units
+        if: steps.aggregate.outputs.health-status != 'healthy'
+        env:
+          HEALTH_STATUS: ${{ steps.aggregate.outputs.health-status }}
+        run: |
+          echo "Benchmark data was published with health status: ${HEALTH_STATUS}"
+          exit 1

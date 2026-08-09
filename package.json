@@ -1,0 +1,27 @@
+{
+  "name": "moonbit-toolchain-performance-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "benchmark": "node --import tsx scripts/benchmark.ts",
+    "aggregate": "node --import tsx scripts/aggregate.ts",
+    "validate:data": "node --import tsx scripts/validate-data.ts"
+  },
+  "dependencies": {
+    "echarts": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
