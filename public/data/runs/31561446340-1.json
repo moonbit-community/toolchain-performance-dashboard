@@ -1,0 +1,2190 @@
+{
+  "schemaVersion": 1,
+  "kind": "benchmark-run",
+  "id": "31561446340-1",
+  "startedAt": "2026-08-12T03:52:54.092Z",
+  "completedAt": "2026-08-12T03:56:59.954Z",
+  "collectedAt": "2026-08-12T03:57:27.496Z",
+  "core": {
+    "repository": "moonbitlang/core",
+    "sha": "50c136025f4385ab131d82e68d79ebdd46ce50c2",
+    "url": "https://github.com/moonbitlang/core/commit/50c136025f4385ab131d82e68d79ebdd46ce50c2"
+  },
+  "workflow": {
+    "repository": "moonbit-community/toolchain-performance-dashboard",
+    "runId": "31561446340",
+    "runAttempt": 1,
+    "runNumber": 4,
+    "event": "schedule",
+    "ref": "refs/heads/main",
+    "sha": "c6069bf8281af8816774c9ef8b956f267f5bb805",
+    "url": "https://github.com/moonbit-community/toolchain-performance-dashboard/actions/runs/31561446340/attempts/1"
+  },
+  "command": {
+    "executable": "moon",
+    "argsTemplate": [
+      "check",
+      "--target",
+      "<backend>",
+      "--target-dir",
+      "<fresh-dir>",
+      "--frozen",
+      "--quiet"
+    ],
+    "environment": {
+      "MOONC_RC_CONVENTION": "borrow"
+    },
+    "iterations": 5,
+    "timeoutMs": 120000,
+    "warmup": false,
+    "freshTargetDir": true,
+    "ordering": "alternating-first"
+  },
+  "runners": [
+    {
+      "os": "ubuntu",
+      "label": "ubuntu-24.04",
+      "architecture": "x64",
+      "name": "GitHub Actions 1000050547",
+      "environment": "github-hosted",
+      "imageOs": "ubuntu24",
+      "imageVersion": "20260810.271.1",
+      "cpu": {
+        "model": "AMD EPYC 7763 64-Core Processor",
+        "logicalCores": 4,
+        "speedMHz": 0
+      }
+    },
+    {
+      "os": "windows",
+      "label": "windows-2025",
+      "architecture": "x64",
+      "name": "GitHub Actions 1000050545",
+      "environment": "github-hosted",
+      "imageOs": "win25-vs2026",
+      "imageVersion": "20260803.193.1",
+      "cpu": {
+        "model": "AMD EPYC 7763 64-Core Processor",
+        "logicalCores": 4,
+        "speedMHz": 2445
+      }
+    },
+    {
+      "os": "macos",
+      "label": "macos-15",
+      "architecture": "arm64",
+      "name": "GitHub Actions 1000050546",
+      "environment": "github-hosted",
+      "imageOs": "macos15",
+      "imageVersion": "20260727.0256.1",
+      "cpu": {
+        "model": "Apple M1 (Virtual)",
+        "logicalCores": 3,
+        "speedMHz": 2400
+      }
+    }
+  ],
+  "toolchains": [
+    {
+      "os": "ubuntu",
+      "stable": {
+        "channel": "stable",
+        "requestedVersion": "latest",
+        "installationStatus": "ok",
+        "parseStatus": "ok",
+        "rawVersion": "v0.10.7+bc794d341 (2026-08-11)",
+        "version": "v0.10.7+bc794d341",
+        "commit": "bc794d341",
+        "date": "2026-08-11",
+        "normalized": "v0.10.7+bc794d341|bc794d341|2026-08-11",
+        "errorSummary": null
+      },
+      "preRelease": {
+        "channel": "pre-release",
+        "requestedVersion": "pre-release",
+        "installationStatus": "ok",
+        "parseStatus": "ok",
+        "rawVersion": "v0.10.7+bc794d341 (2026-08-11)",
+        "version": "v0.10.7+bc794d341",
+        "commit": "bc794d341",
+        "date": "2026-08-11",
+        "normalized": "v0.10.7+bc794d341|bc794d341|2026-08-11",
+        "errorSummary": null
+      },
+      "candidate": {
+        "channel": "nightly",
+        "requestedVersion": "nightly",
+        "installationStatus": "ok",
+        "parseStatus": "ok",
+        "rawVersion": "v0.10.7+2285b25e9-nightly (2026-08-11)",
+        "version": "v0.10.7+2285b25e9-nightly",
+        "commit": "2285b25e9",
+        "date": "2026-08-11",
+        "normalized": "v0.10.7+2285b25e9-nightly|2285b25e9|2026-08-11",
+        "errorSummary": null
+      },
+      "selection": {
+        "selectedChannel": "nightly",
+        "stableMatchesPreRelease": true,
+        "reason": "pre-release-matches-stable"
+      }
+    },
+    {
+      "os": "windows",
+      "stable": {
+        "channel": "stable",
+        "requestedVersion": "latest",
+        "installationStatus": "ok",
+        "parseStatus": "ok",
+        "rawVersion": "v0.10.7+bc794d341 (2026-08-11)",
+        "version": "v0.10.7+bc794d341",
+        "commit": "bc794d341",
+        "date": "2026-08-11",
+        "normalized": "v0.10.7+bc794d341|bc794d341|2026-08-11",
+        "errorSummary": null
+      },
+      "preRelease": {
+        "channel": "pre-release",
+        "requestedVersion": "pre-release",
+        "installationStatus": "ok",
+        "parseStatus": "ok",
+        "rawVersion": "v0.10.7+bc794d341 (2026-08-11)",
+        "version": "v0.10.7+bc794d341",
+        "commit": "bc794d341",
+        "date": "2026-08-11",
+        "normalized": "v0.10.7+bc794d341|bc794d341|2026-08-11",
+        "errorSummary": null
+      },
+      "candidate": {
+        "channel": "nightly",
+        "requestedVersion": "nightly",
+        "installationStatus": "ok",
+        "parseStatus": "ok",
+        "rawVersion": "v0.10.7+2285b25e9-nightly (2026-08-11)",
+        "version": "v0.10.7+2285b25e9-nightly",
+        "commit": "2285b25e9",
+        "date": "2026-08-11",
+        "normalized": "v0.10.7+2285b25e9-nightly|2285b25e9|2026-08-11",
+        "errorSummary": null
+      },
+      "selection": {
+        "selectedChannel": "nightly",
+        "stableMatchesPreRelease": true,
+        "reason": "pre-release-matches-stable"
+      }
+    },
+    {
+      "os": "macos",
+      "stable": {
+        "channel": "stable",
+        "requestedVersion": "latest",
+        "installationStatus": "ok",
+        "parseStatus": "ok",
+        "rawVersion": "v0.10.7+bc794d341 (2026-08-11)",
+        "version": "v0.10.7+bc794d341",
+        "commit": "bc794d341",
+        "date": "2026-08-11",
+        "normalized": "v0.10.7+bc794d341|bc794d341|2026-08-11",
+        "errorSummary": null
+      },
+      "preRelease": {
+        "channel": "pre-release",
+        "requestedVersion": "pre-release",
+        "installationStatus": "ok",
+        "parseStatus": "ok",
+        "rawVersion": "v0.10.7+bc794d341 (2026-08-11)",
+        "version": "v0.10.7+bc794d341",
+        "commit": "bc794d341",
+        "date": "2026-08-11",
+        "normalized": "v0.10.7+bc794d341|bc794d341|2026-08-11",
+        "errorSummary": null
+      },
+      "candidate": {
+        "channel": "nightly",
+        "requestedVersion": "nightly",
+        "installationStatus": "ok",
+        "parseStatus": "ok",
+        "rawVersion": "v0.10.7+2285b25e9-nightly (2026-08-11)",
+        "version": "v0.10.7+2285b25e9-nightly",
+        "commit": "2285b25e9",
+        "date": "2026-08-11",
+        "normalized": "v0.10.7+2285b25e9-nightly|2285b25e9|2026-08-11",
+        "errorSummary": null
+      },
+      "selection": {
+        "selectedChannel": "nightly",
+        "stableMatchesPreRelease": true,
+        "reason": "pre-release-matches-stable"
+      }
+    }
+  ],
+  "units": [
+    {
+      "id": "ubuntu/wasm/stable",
+      "os": "ubuntu",
+      "backend": "wasm",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 1,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-wasm-stable-1-1-6dd52330",
+          "startedAt": "2026-08-12T03:53:30.101Z",
+          "durationMs": 3171.2684510000036,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 4,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-wasm-stable-2-4-dffcc767",
+          "startedAt": "2026-08-12T03:53:40.836Z",
+          "durationMs": 3184.392427999999,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 5,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-wasm-stable-3-5-1467e013",
+          "startedAt": "2026-08-12T03:53:44.021Z",
+          "durationMs": 3296.6811559999987,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 8,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-wasm-stable-4-8-bdf609a3",
+          "startedAt": "2026-08-12T03:53:54.942Z",
+          "durationMs": 3098.8221940000003,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 9,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-wasm-stable-5-9-a4cc3bc3",
+          "startedAt": "2026-08-12T03:53:58.042Z",
+          "durationMs": 3159.670538999999,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3098.8221940000003,
+        "medianMs": 3171.2684510000036,
+        "maxMs": 3296.6811559999987
+      },
+      "error": null
+    },
+    {
+      "id": "ubuntu/wasm/candidate",
+      "os": "ubuntu",
+      "backend": "wasm",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 2,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-wasm-candidate-1-2-351ee835",
+          "startedAt": "2026-08-12T03:53:33.273Z",
+          "durationMs": 3797.165623000001,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 3,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-wasm-candidate-2-3-10fdf71f",
+          "startedAt": "2026-08-12T03:53:37.071Z",
+          "durationMs": 3764.8497300000017,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 6,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-wasm-candidate-3-6-3de7610c",
+          "startedAt": "2026-08-12T03:53:47.319Z",
+          "durationMs": 3827.972404999993,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 7,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-wasm-candidate-4-7-9807e421",
+          "startedAt": "2026-08-12T03:53:51.147Z",
+          "durationMs": 3794.418816999998,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 10,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-wasm-candidate-5-10-45315cc6",
+          "startedAt": "2026-08-12T03:54:01.202Z",
+          "durationMs": 3755.1397029999935,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3755.1397029999935,
+        "medianMs": 3794.418816999998,
+        "maxMs": 3827.972404999993
+      },
+      "error": null
+    },
+    {
+      "id": "ubuntu/wasm-gc/stable",
+      "os": "ubuntu",
+      "backend": "wasm-gc",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 11,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-wasm-gc-stable-1-11-eee9394e",
+          "startedAt": "2026-08-12T03:54:04.958Z",
+          "durationMs": 3153.166519000006,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 14,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-wasm-gc-stable-2-14-42cd17b5",
+          "startedAt": "2026-08-12T03:54:15.740Z",
+          "durationMs": 3127.002217000001,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 15,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-wasm-gc-stable-3-15-ab0f74f1",
+          "startedAt": "2026-08-12T03:54:18.867Z",
+          "durationMs": 3167.2550069999998,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 18,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-wasm-gc-stable-4-18-4ef7caf4",
+          "startedAt": "2026-08-12T03:54:29.617Z",
+          "durationMs": 3127.6176870000054,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 19,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-wasm-gc-stable-5-19-ffe9adc1",
+          "startedAt": "2026-08-12T03:54:32.745Z",
+          "durationMs": 3151.4838170000003,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3127.002217000001,
+        "medianMs": 3151.4838170000003,
+        "maxMs": 3167.2550069999998
+      },
+      "error": null
+    },
+    {
+      "id": "ubuntu/wasm-gc/candidate",
+      "os": "ubuntu",
+      "backend": "wasm-gc",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 12,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-wasm-gc-candidate-1-12-eac361e5",
+          "startedAt": "2026-08-12T03:54:08.112Z",
+          "durationMs": 3791.2258440000005,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 13,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-wasm-gc-candidate-2-13-468cda0f",
+          "startedAt": "2026-08-12T03:54:11.904Z",
+          "durationMs": 3835.3223620000063,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 16,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-wasm-gc-candidate-3-16-86df1f0a",
+          "startedAt": "2026-08-12T03:54:22.035Z",
+          "durationMs": 3831.0051190000086,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 17,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-wasm-gc-candidate-4-17-5008f741",
+          "startedAt": "2026-08-12T03:54:25.866Z",
+          "durationMs": 3750.3402379999898,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 20,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-wasm-gc-candidate-5-20-eb463867",
+          "startedAt": "2026-08-12T03:54:35.898Z",
+          "durationMs": 3771.575073,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3750.3402379999898,
+        "medianMs": 3791.2258440000005,
+        "maxMs": 3835.3223620000063
+      },
+      "error": null
+    },
+    {
+      "id": "ubuntu/js/stable",
+      "os": "ubuntu",
+      "backend": "js",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 21,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-js-stable-1-21-14af891b",
+          "startedAt": "2026-08-12T03:54:39.670Z",
+          "durationMs": 3058.438538999995,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 24,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-js-stable-2-24-9a7eddb9",
+          "startedAt": "2026-08-12T03:54:50.066Z",
+          "durationMs": 3088.7138609999965,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 25,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-js-stable-3-25-d0796fd8",
+          "startedAt": "2026-08-12T03:54:53.155Z",
+          "durationMs": 3045.0828610000026,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 28,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-js-stable-4-28-d7ac02b7",
+          "startedAt": "2026-08-12T03:55:03.586Z",
+          "durationMs": 3038.772880999997,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 29,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-js-stable-5-29-ff00e9fa",
+          "startedAt": "2026-08-12T03:55:06.625Z",
+          "durationMs": 3064.461670000019,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3038.772880999997,
+        "medianMs": 3058.438538999995,
+        "maxMs": 3088.7138609999965
+      },
+      "error": null
+    },
+    {
+      "id": "ubuntu/js/candidate",
+      "os": "ubuntu",
+      "backend": "js",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 22,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-js-candidate-1-22-8c12ed20",
+          "startedAt": "2026-08-12T03:54:42.729Z",
+          "durationMs": 3679.6996639999998,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 23,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-js-candidate-2-23-4f9c2667",
+          "startedAt": "2026-08-12T03:54:46.409Z",
+          "durationMs": 3656.362359999999,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 26,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-js-candidate-3-26-14c86806",
+          "startedAt": "2026-08-12T03:54:56.201Z",
+          "durationMs": 3696.3105630000064,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 27,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-js-candidate-4-27-8a959f19",
+          "startedAt": "2026-08-12T03:54:59.898Z",
+          "durationMs": 3687.7880399999995,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 30,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-js-candidate-5-30-58f2d237",
+          "startedAt": "2026-08-12T03:55:09.690Z",
+          "durationMs": 3687.0662600000214,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3656.362359999999,
+        "medianMs": 3687.0662600000214,
+        "maxMs": 3696.3105630000064
+      },
+      "error": null
+    },
+    {
+      "id": "ubuntu/native/stable",
+      "os": "ubuntu",
+      "backend": "native",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 31,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-native-stable-1-31-2b00de22",
+          "startedAt": "2026-08-12T03:55:13.378Z",
+          "durationMs": 3121.8081289999827,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 34,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-native-stable-2-34-e59bafdc",
+          "startedAt": "2026-08-12T03:55:23.995Z",
+          "durationMs": 3137.2400930000003,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 35,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-native-stable-3-35-ce411a9e",
+          "startedAt": "2026-08-12T03:55:27.133Z",
+          "durationMs": 3111.6587109999964,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 38,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-native-stable-4-38-c10e0acd",
+          "startedAt": "2026-08-12T03:55:37.742Z",
+          "durationMs": 3108.0943279999774,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 39,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "ubuntu-native-stable-5-39-84a64b12",
+          "startedAt": "2026-08-12T03:55:40.851Z",
+          "durationMs": 3159.4266639999987,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3108.0943279999774,
+        "medianMs": 3121.8081289999827,
+        "maxMs": 3159.4266639999987
+      },
+      "error": null
+    },
+    {
+      "id": "ubuntu/native/candidate",
+      "os": "ubuntu",
+      "backend": "native",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 32,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-native-candidate-1-32-cb8d1583",
+          "startedAt": "2026-08-12T03:55:16.500Z",
+          "durationMs": 3739.5553460000083,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 33,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-native-candidate-2-33-2a59ea82",
+          "startedAt": "2026-08-12T03:55:20.240Z",
+          "durationMs": 3753.8670430000057,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 36,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-native-candidate-3-36-bf148819",
+          "startedAt": "2026-08-12T03:55:30.245Z",
+          "durationMs": 3753.8522320000047,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 37,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-native-candidate-4-37-c7bcf631",
+          "startedAt": "2026-08-12T03:55:33.999Z",
+          "durationMs": 3742.1767929999914,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 40,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "ubuntu-native-candidate-5-40-d77a529a",
+          "startedAt": "2026-08-12T03:55:44.011Z",
+          "durationMs": 3849.8501830000023,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3739.5553460000083,
+        "medianMs": 3753.8522320000047,
+        "maxMs": 3849.8501830000023
+      },
+      "error": null
+    },
+    {
+      "id": "windows/wasm/stable",
+      "os": "windows",
+      "backend": "wasm",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 1,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-wasm-stable-1-1-6ca52c1e",
+          "startedAt": "2026-08-12T03:54:06.133Z",
+          "durationMs": 4108.368199999997,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 4,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-wasm-stable-2-4-bbf542af",
+          "startedAt": "2026-08-12T03:54:19.698Z",
+          "durationMs": 4553.814199999993,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 5,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-wasm-stable-3-5-e7ba103c",
+          "startedAt": "2026-08-12T03:54:24.253Z",
+          "durationMs": 4085.745900000009,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 8,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-wasm-stable-4-8-303e62d1",
+          "startedAt": "2026-08-12T03:54:37.760Z",
+          "durationMs": 3960.484400000001,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 9,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-wasm-stable-5-9-41b58a83",
+          "startedAt": "2026-08-12T03:54:41.721Z",
+          "durationMs": 4011.589699999997,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3960.484400000001,
+        "medianMs": 4085.745900000009,
+        "maxMs": 4553.814199999993
+      },
+      "error": null
+    },
+    {
+      "id": "windows/wasm/candidate",
+      "os": "windows",
+      "backend": "wasm",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 2,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-wasm-candidate-1-2-e9956021",
+          "startedAt": "2026-08-12T03:54:10.243Z",
+          "durationMs": 4794.249200000006,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 3,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-wasm-candidate-2-3-d5211f96",
+          "startedAt": "2026-08-12T03:54:15.038Z",
+          "durationMs": 4657.8442,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 6,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-wasm-candidate-3-6-ff89c610",
+          "startedAt": "2026-08-12T03:54:28.340Z",
+          "durationMs": 4651.960800000001,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 7,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-wasm-candidate-4-7-975429c2",
+          "startedAt": "2026-08-12T03:54:32.993Z",
+          "durationMs": 4765.260300000009,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 10,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-wasm-candidate-5-10-9a223060",
+          "startedAt": "2026-08-12T03:54:45.734Z",
+          "durationMs": 4590.423500000004,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 4590.423500000004,
+        "medianMs": 4657.8442,
+        "maxMs": 4794.249200000006
+      },
+      "error": null
+    },
+    {
+      "id": "windows/wasm-gc/stable",
+      "os": "windows",
+      "backend": "wasm-gc",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 11,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-wasm-gc-stable-1-11-252a5412",
+          "startedAt": "2026-08-12T03:54:50.326Z",
+          "durationMs": 4096.880699999994,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 14,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-wasm-gc-stable-2-14-fe968938",
+          "startedAt": "2026-08-12T03:55:03.673Z",
+          "durationMs": 4035.757599999997,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 15,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-wasm-gc-stable-3-15-e5e7038f",
+          "startedAt": "2026-08-12T03:55:07.710Z",
+          "durationMs": 4065.5727000000043,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 18,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-wasm-gc-stable-4-18-89783899",
+          "startedAt": "2026-08-12T03:55:21.060Z",
+          "durationMs": 4102.396100000013,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 19,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-wasm-gc-stable-5-19-d7b9c78a",
+          "startedAt": "2026-08-12T03:55:25.164Z",
+          "durationMs": 4139.767100000012,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 4035.757599999997,
+        "medianMs": 4096.880699999994,
+        "maxMs": 4139.767100000012
+      },
+      "error": null
+    },
+    {
+      "id": "windows/wasm-gc/candidate",
+      "os": "windows",
+      "backend": "wasm-gc",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 12,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-wasm-gc-candidate-1-12-247a0ebb",
+          "startedAt": "2026-08-12T03:54:54.424Z",
+          "durationMs": 4592.43759999999,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 13,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-wasm-gc-candidate-2-13-807e18d8",
+          "startedAt": "2026-08-12T03:54:59.018Z",
+          "durationMs": 4654.250599999999,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 16,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-wasm-gc-candidate-3-16-eb71e81c",
+          "startedAt": "2026-08-12T03:55:11.777Z",
+          "durationMs": 4643.456099999996,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 17,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-wasm-gc-candidate-4-17-1e38af36",
+          "startedAt": "2026-08-12T03:55:16.422Z",
+          "durationMs": 4637.510399999999,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 20,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-wasm-gc-candidate-5-20-5a78f965",
+          "startedAt": "2026-08-12T03:55:29.304Z",
+          "durationMs": 4660.713699999993,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 4592.43759999999,
+        "medianMs": 4643.456099999996,
+        "maxMs": 4660.713699999993
+      },
+      "error": null
+    },
+    {
+      "id": "windows/js/stable",
+      "os": "windows",
+      "backend": "js",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 21,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-js-stable-1-21-307b9519",
+          "startedAt": "2026-08-12T03:55:33.966Z",
+          "durationMs": 3949.122399999993,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 24,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-js-stable-2-24-6884fe37",
+          "startedAt": "2026-08-12T03:55:47.095Z",
+          "durationMs": 3968.703200000018,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 25,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-js-stable-3-25-0edbe02f",
+          "startedAt": "2026-08-12T03:55:51.065Z",
+          "durationMs": 3960.001900000003,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 28,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-js-stable-4-28-69b4c67f",
+          "startedAt": "2026-08-12T03:56:04.325Z",
+          "durationMs": 4011.2274000000034,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 29,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-js-stable-5-29-b66dbcc4",
+          "startedAt": "2026-08-12T03:56:08.337Z",
+          "durationMs": 4017.9253000000026,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3949.122399999993,
+        "medianMs": 3968.703200000018,
+        "maxMs": 4017.9253000000026
+      },
+      "error": null
+    },
+    {
+      "id": "windows/js/candidate",
+      "os": "windows",
+      "backend": "js",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 22,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-js-candidate-1-22-8ce387d8",
+          "startedAt": "2026-08-12T03:55:37.917Z",
+          "durationMs": 4567.593299999979,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 23,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-js-candidate-2-23-c11efafa",
+          "startedAt": "2026-08-12T03:55:42.485Z",
+          "durationMs": 4608.8701,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 26,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-js-candidate-3-26-bb1678e2",
+          "startedAt": "2026-08-12T03:55:55.027Z",
+          "durationMs": 4503.53879999998,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 27,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-js-candidate-4-27-0fc8a953",
+          "startedAt": "2026-08-12T03:55:59.531Z",
+          "durationMs": 4792.071399999986,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 30,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-js-candidate-5-30-a75bba2e",
+          "startedAt": "2026-08-12T03:56:12.356Z",
+          "durationMs": 4540.173500000004,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 4503.53879999998,
+        "medianMs": 4567.593299999979,
+        "maxMs": 4792.071399999986
+      },
+      "error": null
+    },
+    {
+      "id": "windows/native/stable",
+      "os": "windows",
+      "backend": "native",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 31,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-native-stable-1-31-23b09114",
+          "startedAt": "2026-08-12T03:56:16.897Z",
+          "durationMs": 3971.708500000008,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 34,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-native-stable-2-34-f490455a",
+          "startedAt": "2026-08-12T03:56:30.045Z",
+          "durationMs": 4041.638100000011,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 35,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-native-stable-3-35-e11f2cc6",
+          "startedAt": "2026-08-12T03:56:34.087Z",
+          "durationMs": 4026.415500000003,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 38,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-native-stable-4-38-94596fde",
+          "startedAt": "2026-08-12T03:56:47.345Z",
+          "durationMs": 3994.524000000005,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 39,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "windows-native-stable-5-39-5c72c6c7",
+          "startedAt": "2026-08-12T03:56:51.341Z",
+          "durationMs": 4023.5746999999974,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3971.708500000008,
+        "medianMs": 4023.5746999999974,
+        "maxMs": 4041.638100000011
+      },
+      "error": null
+    },
+    {
+      "id": "windows/native/candidate",
+      "os": "windows",
+      "backend": "native",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 32,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-native-candidate-1-32-dc91ee80",
+          "startedAt": "2026-08-12T03:56:20.870Z",
+          "durationMs": 4610.904099999985,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 33,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-native-candidate-2-33-dae8efd0",
+          "startedAt": "2026-08-12T03:56:25.480Z",
+          "durationMs": 4562.525300000008,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 36,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-native-candidate-3-36-2f1eadad",
+          "startedAt": "2026-08-12T03:56:38.115Z",
+          "durationMs": 4586.569300000003,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 37,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-native-candidate-4-37-676c13be",
+          "startedAt": "2026-08-12T03:56:42.702Z",
+          "durationMs": 4641.994200000016,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 40,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "windows-native-candidate-5-40-140616f4",
+          "startedAt": "2026-08-12T03:56:55.366Z",
+          "durationMs": 4586.917799999996,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 4562.525300000008,
+        "medianMs": 4586.917799999996,
+        "maxMs": 4641.994200000016
+      },
+      "error": null
+    },
+    {
+      "id": "macos/wasm/stable",
+      "os": "macos",
+      "backend": "wasm",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 1,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-wasm-stable-1-1-8139ec06",
+          "startedAt": "2026-08-12T03:53:47.210Z",
+          "durationMs": 3239.2767499999973,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 4,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-wasm-stable-2-4-ce2f73d5",
+          "startedAt": "2026-08-12T03:53:57.348Z",
+          "durationMs": 3072.8367080000025,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 5,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-wasm-stable-3-5-a32887f0",
+          "startedAt": "2026-08-12T03:54:00.421Z",
+          "durationMs": 3179.2818750000006,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 8,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-wasm-stable-4-8-6bf715b8",
+          "startedAt": "2026-08-12T03:54:10.778Z",
+          "durationMs": 3062.188750000001,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 9,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-wasm-stable-5-9-4aa90358",
+          "startedAt": "2026-08-12T03:54:13.841Z",
+          "durationMs": 2843.467666000004,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 2843.467666000004,
+        "medianMs": 3072.8367080000025,
+        "maxMs": 3239.2767499999973
+      },
+      "error": null
+    },
+    {
+      "id": "macos/wasm/candidate",
+      "os": "macos",
+      "backend": "wasm",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 2,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-wasm-candidate-1-2-fbab2c97",
+          "startedAt": "2026-08-12T03:53:50.450Z",
+          "durationMs": 3298.293832999996,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 3,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-wasm-candidate-2-3-04acc27e",
+          "startedAt": "2026-08-12T03:53:53.749Z",
+          "durationMs": 3598.7063750000016,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 6,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-wasm-candidate-3-6-65f075b9",
+          "startedAt": "2026-08-12T03:54:03.601Z",
+          "durationMs": 3607.5567919999958,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 7,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-wasm-candidate-4-7-9dcae3d3",
+          "startedAt": "2026-08-12T03:54:07.209Z",
+          "durationMs": 3568.2367079999967,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 10,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-wasm-candidate-5-10-23fde6ce",
+          "startedAt": "2026-08-12T03:54:16.685Z",
+          "durationMs": 3680.1787079999995,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3298.293832999996,
+        "medianMs": 3598.7063750000016,
+        "maxMs": 3680.1787079999995
+      },
+      "error": null
+    },
+    {
+      "id": "macos/wasm-gc/stable",
+      "os": "macos",
+      "backend": "wasm-gc",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 11,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-wasm-gc-stable-1-11-213dff82",
+          "startedAt": "2026-08-12T03:54:20.366Z",
+          "durationMs": 3059.664875000002,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 14,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-wasm-gc-stable-2-14-60ae68c2",
+          "startedAt": "2026-08-12T03:54:30.292Z",
+          "durationMs": 2924.6000829999975,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 15,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-wasm-gc-stable-3-15-4e2fb3c3",
+          "startedAt": "2026-08-12T03:54:33.217Z",
+          "durationMs": 2882.646916999991,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 18,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-wasm-gc-stable-4-18-582f4723",
+          "startedAt": "2026-08-12T03:54:43.351Z",
+          "durationMs": 2893.9432499999966,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 19,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-wasm-gc-stable-5-19-741938ad",
+          "startedAt": "2026-08-12T03:54:46.245Z",
+          "durationMs": 3131.0550420000072,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 2882.646916999991,
+        "medianMs": 2924.6000829999975,
+        "maxMs": 3131.0550420000072
+      },
+      "error": null
+    },
+    {
+      "id": "macos/wasm-gc/candidate",
+      "os": "macos",
+      "backend": "wasm-gc",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 12,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-wasm-gc-candidate-1-12-28b8ec3e",
+          "startedAt": "2026-08-12T03:54:23.426Z",
+          "durationMs": 3338.724875,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 13,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-wasm-gc-candidate-2-13-2045d9d3",
+          "startedAt": "2026-08-12T03:54:26.765Z",
+          "durationMs": 3525.770709000004,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 16,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-wasm-gc-candidate-3-16-9fe36756",
+          "startedAt": "2026-08-12T03:54:36.100Z",
+          "durationMs": 3936.639750000002,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 17,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-wasm-gc-candidate-4-17-b622b7ae",
+          "startedAt": "2026-08-12T03:54:40.037Z",
+          "durationMs": 3313.9112920000043,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 20,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-wasm-gc-candidate-5-20-5fb6f71b",
+          "startedAt": "2026-08-12T03:54:49.377Z",
+          "durationMs": 3234.3235419999983,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3234.3235419999983,
+        "medianMs": 3338.724875,
+        "maxMs": 3936.639750000002
+      },
+      "error": null
+    },
+    {
+      "id": "macos/js/stable",
+      "os": "macos",
+      "backend": "js",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 21,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-js-stable-1-21-f7e0bd1e",
+          "startedAt": "2026-08-12T03:54:52.612Z",
+          "durationMs": 3120.433250000002,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 24,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-js-stable-2-24-50cea65e",
+          "startedAt": "2026-08-12T03:55:02.346Z",
+          "durationMs": 2659.3956670000043,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 25,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-js-stable-3-25-85a989bf",
+          "startedAt": "2026-08-12T03:55:05.005Z",
+          "durationMs": 2722.9129170000087,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 28,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-js-stable-4-28-58c108eb",
+          "startedAt": "2026-08-12T03:55:14.287Z",
+          "durationMs": 3032.1979160000046,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 29,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-js-stable-5-29-daccf7e0",
+          "startedAt": "2026-08-12T03:55:17.320Z",
+          "durationMs": 3084.970250000013,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 2659.3956670000043,
+        "medianMs": 3032.1979160000046,
+        "maxMs": 3120.433250000002
+      },
+      "error": null
+    },
+    {
+      "id": "macos/js/candidate",
+      "os": "macos",
+      "backend": "js",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 22,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-js-candidate-1-22-96b7aa39",
+          "startedAt": "2026-08-12T03:54:55.733Z",
+          "durationMs": 3317.3904170000023,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 23,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-js-candidate-2-23-7203ed68",
+          "startedAt": "2026-08-12T03:54:59.050Z",
+          "durationMs": 3294.7155409999978,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 26,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-js-candidate-3-26-04700d1a",
+          "startedAt": "2026-08-12T03:55:07.729Z",
+          "durationMs": 3322.9124169999996,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 27,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-js-candidate-4-27-ec4fc467",
+          "startedAt": "2026-08-12T03:55:11.052Z",
+          "durationMs": 3234.690750000009,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 30,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-js-candidate-5-30-26b29777",
+          "startedAt": "2026-08-12T03:55:20.406Z",
+          "durationMs": 3633.7319580000185,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3234.690750000009,
+        "medianMs": 3317.3904170000023,
+        "maxMs": 3633.7319580000185
+      },
+      "error": null
+    },
+    {
+      "id": "macos/native/stable",
+      "os": "macos",
+      "backend": "native",
+      "role": "stable",
+      "channel": "stable",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 31,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-native-stable-1-31-b5eb35c5",
+          "startedAt": "2026-08-12T03:55:24.040Z",
+          "durationMs": 3028.3103330000013,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 34,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-native-stable-2-34-2d8fdf5d",
+          "startedAt": "2026-08-12T03:55:34.289Z",
+          "durationMs": 2754.405457999994,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 35,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-native-stable-3-35-e18f48c8",
+          "startedAt": "2026-08-12T03:55:37.044Z",
+          "durationMs": 3102.6504580000183,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 38,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-native-stable-4-38-37e85fd8",
+          "startedAt": "2026-08-12T03:55:47.669Z",
+          "durationMs": 3388.04708400002,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 39,
+          "role": "stable",
+          "channel": "stable",
+          "targetDirId": "macos-native-stable-5-39-962f3901",
+          "startedAt": "2026-08-12T03:55:51.058Z",
+          "durationMs": 3135.6057080000173,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 2754.405457999994,
+        "medianMs": 3102.6504580000183,
+        "maxMs": 3388.04708400002
+      },
+      "error": null
+    },
+    {
+      "id": "macos/native/candidate",
+      "os": "macos",
+      "backend": "native",
+      "role": "candidate",
+      "channel": "nightly",
+      "status": "ok",
+      "samples": [
+        {
+          "iteration": 1,
+          "sequence": 32,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-native-candidate-1-32-cdc40593",
+          "startedAt": "2026-08-12T03:55:27.069Z",
+          "durationMs": 3768.6451670000097,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 2,
+          "sequence": 33,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-native-candidate-2-33-026fba36",
+          "startedAt": "2026-08-12T03:55:30.838Z",
+          "durationMs": 3450.5222919999796,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 3,
+          "sequence": 36,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-native-candidate-3-36-3250c78b",
+          "startedAt": "2026-08-12T03:55:40.147Z",
+          "durationMs": 3907.7752080000064,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 4,
+          "sequence": 37,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-native-candidate-4-37-b881cbe4",
+          "startedAt": "2026-08-12T03:55:44.055Z",
+          "durationMs": 3613.3571249999804,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        },
+        {
+          "iteration": 5,
+          "sequence": 40,
+          "role": "candidate",
+          "channel": "nightly",
+          "targetDirId": "macos-native-candidate-5-40-ab857458",
+          "startedAt": "2026-08-12T03:55:54.194Z",
+          "durationMs": 3411.965124999988,
+          "status": "ok",
+          "exitCode": 0,
+          "errorSummary": null
+        }
+      ],
+      "stats": {
+        "minMs": 3411.965124999988,
+        "medianMs": 3613.3571249999804,
+        "maxMs": 3907.7752080000064
+      },
+      "error": null
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "ubuntu/wasm",
+      "os": "ubuntu",
+      "backend": "wasm",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 3171.2684510000036,
+      "candidateMedianMs": 3794.418816999998,
+      "deltaPercent": 19.649877505749945,
+      "errorSummary": null
+    },
+    {
+      "id": "ubuntu/wasm-gc",
+      "os": "ubuntu",
+      "backend": "wasm-gc",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 3151.4838170000003,
+      "candidateMedianMs": 3791.2258440000005,
+      "deltaPercent": 20.299708459521504,
+      "errorSummary": null
+    },
+    {
+      "id": "ubuntu/js",
+      "os": "ubuntu",
+      "backend": "js",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 3058.438538999995,
+      "candidateMedianMs": 3687.0662600000214,
+      "deltaPercent": 20.553877836157728,
+      "errorSummary": null
+    },
+    {
+      "id": "ubuntu/native",
+      "os": "ubuntu",
+      "backend": "native",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 3121.8081289999827,
+      "candidateMedianMs": 3753.8522320000047,
+      "deltaPercent": 20.24609062705229,
+      "errorSummary": null
+    },
+    {
+      "id": "windows/wasm",
+      "os": "windows",
+      "backend": "wasm",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 4085.745900000009,
+      "candidateMedianMs": 4657.8442,
+      "deltaPercent": 14.00229759760609,
+      "errorSummary": null
+    },
+    {
+      "id": "windows/wasm-gc",
+      "os": "windows",
+      "backend": "wasm-gc",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 4096.880699999994,
+      "candidateMedianMs": 4643.456099999996,
+      "deltaPercent": 13.34125741079066,
+      "errorSummary": null
+    },
+    {
+      "id": "windows/js",
+      "os": "windows",
+      "backend": "js",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 3968.703200000018,
+      "candidateMedianMs": 4567.593299999979,
+      "deltaPercent": 15.090322198947954,
+      "errorSummary": null
+    },
+    {
+      "id": "windows/native",
+      "os": "windows",
+      "backend": "native",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 4023.5746999999974,
+      "candidateMedianMs": 4586.917799999996,
+      "deltaPercent": 14.001059803860446,
+      "errorSummary": null
+    },
+    {
+      "id": "macos/wasm",
+      "os": "macos",
+      "backend": "wasm",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 3072.8367080000025,
+      "candidateMedianMs": 3598.7063750000016,
+      "deltaPercent": 17.113492091230206,
+      "errorSummary": null
+    },
+    {
+      "id": "macos/wasm-gc",
+      "os": "macos",
+      "backend": "wasm-gc",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 2924.6000829999975,
+      "candidateMedianMs": 3338.724875,
+      "deltaPercent": 14.160048562099515,
+      "errorSummary": null
+    },
+    {
+      "id": "macos/js",
+      "os": "macos",
+      "backend": "js",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 3032.1979160000046,
+      "candidateMedianMs": 3317.3904170000023,
+      "deltaPercent": 9.405471176374137,
+      "errorSummary": null
+    },
+    {
+      "id": "macos/native",
+      "os": "macos",
+      "backend": "native",
+      "candidateChannel": "nightly",
+      "status": "ok",
+      "stableMedianMs": 3102.6504580000183,
+      "candidateMedianMs": 3613.3571249999804,
+      "deltaPercent": 16.460335249274774,
+      "errorSummary": null
+    }
+  ],
+  "health": {
+    "status": "healthy",
+    "totalUnits": 24,
+    "okUnits": 24,
+    "failedUnits": 0,
+    "totalComparisons": 12,
+    "okComparisons": 12,
+    "parseFailures": 0
+  }
+}
