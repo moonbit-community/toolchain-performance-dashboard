@@ -37,17 +37,18 @@ describe("dashboard data fixtures", () => {
     assert.equal(cells.every((cell) => cell.status === "ok"), true);
     assert.equal(cells.some((cell) => cell.deltaPercent! < 0), true);
     assert.equal(cells.some((cell) => cell.deltaPercent! > 0), true);
-    assert.match(
-      renderDashboard(
-        normalIndexFixture,
-        null,
-        "loading",
-        DEFAULT_FILTERS,
-        buildMedianSeries(normalIndexFixture, DEFAULT_FILTERS, now),
-        buildDeltaSeries(normalIndexFixture, DEFAULT_FILTERS, now),
-      ),
-      /id="heatmap-chart"/,
+    const html = renderDashboard(
+      normalIndexFixture,
+      null,
+      "loading",
+      DEFAULT_FILTERS,
+      buildMedianSeries(normalIndexFixture, DEFAULT_FILTERS, now),
+      buildDeltaSeries(normalIndexFixture, DEFAULT_FILTERS, now),
     );
+    assert.match(html, /<h1 id="matrix-title">OS × backend delta<\/h1>/);
+    assert.match(html, /id="heatmap-chart"/);
+    assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
+    assert.ok(html.indexOf("matrix-title") < html.indexOf("trends-title"));
   });
 
   it("keeps pre-release and nightly in separate trend series", () => {

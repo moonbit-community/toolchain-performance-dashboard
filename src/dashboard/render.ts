@@ -37,34 +37,37 @@ function option(value: string, label: string, current: string): string {
 function renderHeader(): string {
   return `
     <header class="site-header">
-      <a class="brand" href="./" aria-label="MoonBit Toolchain Performance home">
-        <span class="brand-mark" aria-hidden="true"><span></span></span>
-        <span>
-          <strong>MoonBit</strong>
-          <small>Toolchain performance</small>
-        </span>
-      </a>
-      <nav aria-label="Project links">
-        <a href="https://github.com/moonbit-community/toolchain-performance-dashboard" target="_blank" rel="noreferrer">Source <span aria-hidden="true">↗</span></a>
-        <a href="https://github.com/moonbitlang/core/commit/50c136025f4385ab131d82e68d79ebdd46ce50c2" target="_blank" rel="noreferrer">Core baseline <span aria-hidden="true">↗</span></a>
-      </nav>
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="MoonBit Toolchain Performance home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <strong>MoonBit toolchain performance</strong>
+        </a>
+        <nav aria-label="Project links">
+          <a href="https://github.com/moonbit-community/toolchain-performance-dashboard" target="_blank" rel="noreferrer">Source <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/moonbitlang/core/commit/50c136025f4385ab131d82e68d79ebdd46ce50c2" target="_blank" rel="noreferrer">Core baseline <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
     </header>`;
 }
 
 function renderProtocol(): string {
   return `
-    <section class="protocol" aria-labelledby="protocol-title">
-      <div>
-        <p class="eyebrow">Benchmark protocol</p>
-        <h2 id="protocol-title">A fixed source, a moving toolchain</h2>
+    <section class="support-section" aria-labelledby="protocol-title">
+      <details class="disclosure protocol">
+        <summary>
+          <span class="summary-title"><small>Method</small><strong id="protocol-title">Benchmark protocol</strong></span>
+          <span class="summary-meta">Fixed source · 5 samples · daily</span>
+        </summary>
+        <div class="disclosure-body protocol-body">
         <p>Every run checks the same core revision with clean output directories. Five un-warmed samples are paired and alternated on the same runner.</p>
-      </div>
-      <dl class="protocol-grid">
-        <div><dt>Source</dt><dd><code>core@50c13602</code></dd></div>
-        <div><dt>Backends</dt><dd>Wasm · Wasm GC · JS · Native</dd></div>
-        <div><dt>Samples</dt><dd>5 per toolchain and cell</dd></div>
-        <div><dt>Schedule</dt><dd>Daily · 02:00 UTC</dd></div>
-      </dl>
+          <dl class="protocol-grid">
+            <div><dt>Source</dt><dd><code>core@50c13602</code></dd></div>
+            <div><dt>Backends</dt><dd>Wasm · Wasm GC · JS · Native</dd></div>
+            <div><dt>Samples</dt><dd>5 per toolchain and cell</dd></div>
+            <div><dt>Schedule</dt><dd>Daily · 02:00 UTC</dd></div>
+          </dl>
+        </div>
+      </details>
     </section>`;
 }
 
@@ -72,12 +75,12 @@ export function renderLoading(): string {
   return `
     ${renderHeader()}
     <main id="main-content" class="page-shell">
-      <section class="hero hero--loading" aria-live="polite">
-        <p class="eyebrow">Daily cross-platform signal</p>
-        <h1>Reading benchmark history…</h1>
+      <section class="loading-state" aria-live="polite">
+        <p class="eyebrow">Latest comparison</p>
+        <h1>OS × backend delta</h1>
+        <p>Reading benchmark history…</p>
         <div class="loading-bar" aria-hidden="true"><span></span></div>
       </section>
-      ${renderProtocol()}
     </main>`;
 }
 
@@ -88,11 +91,10 @@ export function renderFatalError(message: string): string {
       <section class="state-panel state-panel--error" role="alert">
         <span class="state-glyph" aria-hidden="true">×</span>
         <p class="eyebrow">Data unavailable</p>
-        <h1>The benchmark history could not be read.</h1>
+        <h1>Benchmark history unavailable</h1>
         <p>${escapeHtml(message)}</p>
         <button type="button" class="button" id="retry-load">Try again</button>
       </section>
-      ${renderProtocol()}
     </main>`;
 }
 
@@ -100,13 +102,10 @@ function renderEmpty(index: RunIndexV1): string {
   return `
     ${renderHeader()}
     <main id="main-content" class="page-shell">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> Daily cross-platform signal</p>
-          <h1>Performance history starts with the first scheduled run.</h1>
-          <p class="lede">The dashboard is ready. GitHub Actions will compare stable with pre-release—or nightly when pre-release matches stable—across three operating systems and four backends.</p>
-        </div>
-        <div class="empty-orbit" aria-hidden="true"><span></span><i></i></div>
+      <section class="page-intro" aria-labelledby="page-title">
+        <p class="eyebrow">Latest comparison</p>
+        <h1 id="page-title">OS × backend delta</h1>
+        <p class="lede">Stable versus the next MoonBit toolchain across three operating systems and four backends.</p>
       </section>
       <section class="state-panel">
         <span class="state-glyph" aria-hidden="true">○</span>
@@ -138,7 +137,7 @@ function versionMetadata(toolchain: ToolchainPairV1): string {
     .join("");
 }
 
-function renderOverview(summary: RunSummaryV1): string {
+function renderMatrix(summary: RunSummaryV1): string {
   const channels = [...new Set(summary.toolchains.map((pair) => pair.candidate.channel))];
   const best = summary.comparisons
     .filter((item) => item.deltaPercent !== null)
@@ -147,82 +146,20 @@ function renderOverview(summary: RunSummaryV1): string {
     .filter((item) => item.deltaPercent !== null)
     .sort((left, right) => right.deltaPercent! - left.deltaPercent!)[0];
   return `
-    <section class="hero hero--latest" aria-labelledby="page-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> Daily cross-platform signal</p>
-        <h1 id="page-title">Is the next MoonBit toolchain faster?</h1>
-        <p class="lede">Stable versus <strong>${escapeHtml(channels.join(" / "))}</strong>, measured against one immutable core revision. Negative deltas mean the candidate finished sooner.</p>
-        <div class="timestamp-pair">
-          <span><b>UTC</b> <time datetime="${escapeHtml(summary.completedAt)}">${escapeHtml(formatUtc(summary.completedAt))}</time></span>
-          <span><b>Local</b> <time datetime="${escapeHtml(summary.completedAt)}">${escapeHtml(formatLocal(summary.completedAt))}</time></span>
+    <section class="matrix-section" aria-labelledby="matrix-title">
+      <header class="dashboard-heading">
+        <div class="dashboard-heading-copy">
+          <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> Latest comparison</p>
+          <h1 id="matrix-title">OS × backend delta</h1>
+          <p class="lede">Stable versus <strong>${escapeHtml(channels.join(" / "))}</strong> on a fixed core revision. Negative deltas mean the candidate finished sooner.</p>
         </div>
-      </div>
-      <div class="hero-status">
-        <span class="hero-status-label">Latest run</span>
-        ${statusBadge(summary.health.status)}
-        <strong>${summary.health.okComparisons}<small> / ${summary.health.totalComparisons}</small></strong>
-        <span>comparable cells</span>
-        <a href="${escapeHtml(summary.workflow.url)}" target="_blank" rel="noreferrer">Open workflow <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-    <section class="metric-strip" aria-label="Latest run highlights">
-      <article>
-        <span>Core revision</span>
-        <a href="https://github.com/moonbitlang/core/commit/${escapeHtml(summary.coreSha)}" target="_blank" rel="noreferrer"><code>${escapeHtml(shortSha(summary.coreSha))}</code></a>
-        <small>Fixed across all runs</small>
-      </article>
-      <article>
-        <span>Best candidate result</span>
-        <strong class="delta delta--good">${formatDelta(best?.deltaPercent ?? null)}</strong>
-        <small>${best ? `${OS_LABELS[best.os]} · ${BACKEND_LABELS[best.backend]}` : "No valid comparison"}</small>
-      </article>
-      <article>
-        <span>Largest regression</span>
-        <strong class="delta delta--bad">${formatDelta(worst?.deltaPercent ?? null)}</strong>
-        <small>${worst ? `${OS_LABELS[worst.os]} · ${BACKEND_LABELS[worst.backend]}` : "No valid comparison"}</small>
-      </article>
-      <article>
-        <span>Unit health</span>
-        <strong>${summary.health.okUnits}<small> / ${summary.health.totalUnits}</small></strong>
-        <small>${summary.health.parseFailures} version parse failure${summary.health.parseFailures === 1 ? "" : "s"}</small>
-      </article>
-    </section>`;
-}
-
-function renderVersions(summary: RunSummaryV1): string {
-  return `
-    <section class="section-block" aria-labelledby="versions-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">Exact inputs</p><h2 id="versions-title">Toolchain pair by runner</h2></div>
-        <p>Endpoints are resolved independently on each VM and preserved verbatim.</p>
-      </div>
-      <div class="version-grid">
-        ${summary.toolchains
-          .map(
-            (pair) => `
-              <article class="version-card">
-                <header><strong>${escapeHtml(OS_LABELS[pair.os])}</strong><span>${escapeHtml(pair.selection.selectedChannel)}</span></header>
-                ${versionMetadata(pair)}
-                <footer>${
-                  pair.selection.reason === "pre-release-matches-stable"
-                    ? "Pre-release matched stable, so nightly was selected."
-                    : pair.selection.reason === "pre-release-differs"
-                      ? "Pre-release differed from stable and was selected."
-                      : "Exact version comparison was unavailable; pre-release was retained."
-                }</footer>
-              </article>`,
-          )
-          .join("")}
-      </div>
-    </section>`;
-}
-
-function renderMatrix(summary: RunSummaryV1): string {
-  const cells = latestMatrix(summary);
-  return `
-    <section class="section-block" aria-labelledby="matrix-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">Latest comparison</p><h2 id="matrix-title">OS × backend delta</h2></div>
+        <div class="run-summary" aria-label="Latest run summary">
+          <div class="run-summary-primary">${statusBadge(summary.health.status)}<span><strong>${summary.health.okComparisons} / ${summary.health.totalComparisons}</strong> comparable cells</span></div>
+          <time datetime="${escapeHtml(summary.completedAt)}" title="${escapeHtml(formatUtc(summary.completedAt))}">${escapeHtml(formatLocal(summary.completedAt))}</time>
+          <a href="${escapeHtml(summary.workflow.url)}" target="_blank" rel="noreferrer">Workflow <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+      <div class="matrix-toolbar">
         <div class="legend" aria-label="Delta legend"><span class="legend-fast">Candidate faster</span><span>Even</span><span class="legend-slow">Candidate slower</span></div>
       </div>
       <div class="chart-card chart-card--wide">
@@ -233,7 +170,7 @@ function renderMatrix(summary: RunSummaryV1): string {
             <table>
               <thead><tr><th scope="col">Runner</th><th scope="col">Backend</th><th scope="col">Channel</th><th scope="col">Status</th><th scope="col">Stable</th><th scope="col">Candidate</th><th scope="col">Delta</th></tr></thead>
               <tbody>
-                ${cells
+                ${latestMatrix(summary)
                   .map(
                     (cell) => `<tr>
                       <th scope="row">${escapeHtml(OS_LABELS[cell.os])}</th>
@@ -251,6 +188,56 @@ function renderMatrix(summary: RunSummaryV1): string {
           </div>
         </details>
       </div>
+      <div class="metric-strip" aria-label="Latest run highlights">
+        <article>
+          <span>Best result</span>
+          <strong class="delta delta--good">${formatDelta(best?.deltaPercent ?? null)}</strong>
+          <small>${best ? `${OS_LABELS[best.os]} · ${BACKEND_LABELS[best.backend]}` : "No valid comparison"}</small>
+        </article>
+        <article>
+          <span>Largest regression</span>
+          <strong class="delta delta--bad">${formatDelta(worst?.deltaPercent ?? null)}</strong>
+          <small>${worst ? `${OS_LABELS[worst.os]} · ${BACKEND_LABELS[worst.backend]}` : "No valid comparison"}</small>
+        </article>
+        <article>
+          <span>Core revision</span>
+          <a href="https://github.com/moonbitlang/core/commit/${escapeHtml(summary.coreSha)}" target="_blank" rel="noreferrer"><code>${escapeHtml(shortSha(summary.coreSha))}</code></a>
+          <small>Fixed across all runs</small>
+        </article>
+      </div>
+    </section>`;
+}
+
+function renderVersions(summary: RunSummaryV1): string {
+  return `
+    <section class="support-section" aria-labelledby="versions-title">
+      <details class="disclosure">
+        <summary>
+          <span class="summary-title"><small>Exact inputs</small><strong id="versions-title">Toolchain pair by runner</strong></span>
+          <span class="summary-meta">${summary.toolchains.length} runners</span>
+        </summary>
+        <div class="disclosure-body">
+          <p class="disclosure-note">Endpoints are resolved independently on each VM and preserved verbatim.</p>
+          <div class="version-grid">
+        ${summary.toolchains
+          .map(
+            (pair) => `
+              <article class="version-card">
+                <header><strong>${escapeHtml(OS_LABELS[pair.os])}</strong><span>${escapeHtml(pair.selection.selectedChannel)}</span></header>
+                ${versionMetadata(pair)}
+                <footer>${
+                  pair.selection.reason === "pre-release-matches-stable"
+                    ? "Pre-release matched stable, so nightly was selected."
+                    : pair.selection.reason === "pre-release-differs"
+                      ? "Pre-release differed from stable and was selected."
+                      : "Exact version comparison was unavailable; pre-release was retained."
+                }</footer>
+              </article>`,
+          )
+          .join("")}
+          </div>
+        </div>
+      </details>
     </section>`;
 }
 
@@ -332,12 +319,15 @@ function sampleList(unit: BenchmarkRunV1["units"][number]): string {
 function renderRunDetails(run: BenchmarkRunV1): string {
   const failures = run.units.filter((unit) => unit.status !== "ok");
   return `
-    <section class="section-block" aria-labelledby="details-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">Evidence</p><h2 id="details-title">Raw samples and runner details</h2></div>
-        <p>Cleanup happens before timing; every badge is one independent process.</p>
-      </div>
-      <div class="detail-card">
+    <section class="support-section" aria-labelledby="details-title">
+      <details class="disclosure">
+        <summary>
+          <span class="summary-title"><small>Evidence</small><strong id="details-title">Raw samples and runner details</strong></span>
+          <span class="summary-meta${failures.length > 0 ? " summary-meta--warning" : ""}">${run.units.length} units${failures.length > 0 ? ` · ${failures.length} issue${failures.length === 1 ? "" : "s"}` : ""}</span>
+        </summary>
+        <div class="disclosure-body">
+          <p class="disclosure-note">Cleanup happens before timing; every badge is one independent process.</p>
+          <div class="detail-card">
         <div class="table-scroll">
           <table class="sample-table">
             <thead><tr><th scope="col">Runner</th><th scope="col">Backend</th><th scope="col">Toolchain</th><th scope="col">Status</th><th scope="col">Five samples</th><th scope="col">Min / median / max</th></tr></thead>
@@ -361,48 +351,49 @@ function renderRunDetails(run: BenchmarkRunV1): string {
             </tbody>
           </table>
         </div>
-      </div>
-      <div class="detail-grid">
-        <article class="detail-card">
-          <h3>Runner inventory</h3>
-          <div class="table-scroll"><table>
-            <thead><tr><th scope="col">Image</th><th scope="col">Architecture</th><th scope="col">CPU</th><th scope="col">Image version</th></tr></thead>
-            <tbody>${run.runners
-              .map(
-                (runner) => `<tr><th scope="row">${escapeHtml(runner.label)}</th><td>${escapeHtml(runner.architecture)}</td><td>${escapeHtml(runner.cpu.model)}<small>${runner.cpu.logicalCores} logical cores</small></td><td>${escapeHtml(runner.imageVersion ?? "Not reported")}</td></tr>`,
-              )
-              .join("")}</tbody>
-          </table></div>
-        </article>
-        <article class="detail-card command-card">
-          <h3>Command contract</h3>
-          <code>moon ${escapeHtml(run.command.argsTemplate.join(" "))}</code>
-          <dl>
-            <div><dt>Environment</dt><dd><code>MOONC_RC_CONVENTION=borrow</code></dd></div>
-            <div><dt>Timeout</dt><dd>${run.command.timeoutMs / 1_000} seconds per process</dd></div>
-            <div><dt>Ordering</dt><dd>Alternating first toolchain, no warm-up</dd></div>
-          </dl>
-        </article>
-      </div>
-      ${
-        failures.length > 0
-          ? `<details class="failure-panel" open><summary>${failures.length} failed, timed out, or unavailable unit${failures.length === 1 ? "" : "s"}</summary><ul>${failures
-              .map(
-                (unit) => `<li><strong>${escapeHtml(`${unit.os}/${unit.backend}/${unit.role}`)}</strong> ${statusBadge(unit.status)}<pre>${escapeHtml(unit.error?.summary ?? "No error detail was recorded")}</pre></li>`,
-              )
-              .join("")}</ul></details>`
-          : `<div class="success-panel"><span aria-hidden="true">✓</span><p><strong>All 24 units completed.</strong> Every comparison contains five stable and five candidate samples.</p></div>`
-      }
+          </div>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <h3>Runner inventory</h3>
+              <div class="table-scroll"><table>
+                <thead><tr><th scope="col">Image</th><th scope="col">Architecture</th><th scope="col">CPU</th><th scope="col">Image version</th></tr></thead>
+                <tbody>${run.runners
+                  .map(
+                    (runner) => `<tr><th scope="row">${escapeHtml(runner.label)}</th><td>${escapeHtml(runner.architecture)}</td><td>${escapeHtml(runner.cpu.model)}<small>${runner.cpu.logicalCores} logical cores</small></td><td>${escapeHtml(runner.imageVersion ?? "Not reported")}</td></tr>`,
+                  )
+                  .join("")}</tbody>
+              </table></div>
+            </article>
+            <article class="detail-card command-card">
+              <h3>Command contract</h3>
+              <code>moon ${escapeHtml(run.command.argsTemplate.join(" "))}</code>
+              <dl>
+                <div><dt>Environment</dt><dd><code>MOONC_RC_CONVENTION=borrow</code></dd></div>
+                <div><dt>Timeout</dt><dd>${run.command.timeoutMs / 1_000} seconds per process</dd></div>
+                <div><dt>Ordering</dt><dd>Alternating first toolchain, no warm-up</dd></div>
+              </dl>
+            </article>
+          </div>
+          ${
+            failures.length > 0
+              ? `<details class="failure-panel" open><summary>${failures.length} failed, timed out, or unavailable unit${failures.length === 1 ? "" : "s"}</summary><ul>${failures
+                  .map(
+                    (unit) => `<li><strong>${escapeHtml(`${unit.os}/${unit.backend}/${unit.role}`)}</strong> ${statusBadge(unit.status)}<pre>${escapeHtml(unit.error?.summary ?? "No error detail was recorded")}</pre></li>`,
+                  )
+                  .join("")}</ul></details>`
+              : `<div class="success-panel"><span aria-hidden="true">✓</span><p><strong>All 24 units completed.</strong> Every comparison contains five stable and five candidate samples.</p></div>`
+          }
+        </div>
+      </details>
     </section>`;
 }
 
 function renderDetailState(detailState: "loading" | string): string {
   return `
-    <section class="section-block" aria-labelledby="details-title">
-      <div class="section-heading"><div><p class="eyebrow">Evidence</p><h2 id="details-title">Raw samples and runner details</h2></div></div>
-      <div class="state-panel ${detailState === "loading" ? "" : "state-panel--error"}" ${detailState === "loading" ? "aria-live=\"polite\"" : "role=\"alert\""}>
-        <span class="state-glyph" aria-hidden="true">${detailState === "loading" ? "…" : "!"}</span>
-        <h3>${detailState === "loading" ? "Loading the latest run file" : "Latest raw details unavailable"}</h3>
+    <section class="support-section" aria-labelledby="details-title">
+      <div class="detail-state ${detailState === "loading" ? "" : "detail-state--error"}" ${detailState === "loading" ? "aria-live=\"polite\"" : "role=\"alert\""}>
+        <span class="summary-title"><small>Evidence</small><strong id="details-title">Raw samples and runner details</strong></span>
+        <span class="summary-meta">${detailState === "loading" ? "Loading…" : "Unavailable"}</span>
         ${detailState === "loading" ? "" : `<p>${escapeHtml(detailState)}</p>`}
       </div>
     </section>`;
@@ -429,10 +420,9 @@ export function renderDashboard(
   return `
     ${renderHeader()}
     <main id="main-content" class="page-shell">
-      ${renderOverview(latest)}
-      ${renderVersions(latest)}
       ${renderMatrix(latest)}
       ${renderTrends(filters, medianSeries, deltaSeries)}
+      ${renderVersions(latest)}
       ${run ? renderRunDetails(run) : renderDetailState(detailState ?? "Raw run was not loaded")}
       ${renderProtocol()}
     </main>

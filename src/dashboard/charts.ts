@@ -30,24 +30,30 @@ echarts.use([
 ]);
 
 const STATUS_COLORS: Record<Exclude<UnitStatus, "ok">, string> = {
-  failed: "#5b3241",
-  timeout: "#5f4b28",
-  unavailable: "#283e42",
+  failed: "#fef2f2",
+  timeout: "#fffbeb",
+  unavailable: "#f3f4f6",
+};
+
+const STATUS_TEXT_COLORS: Record<Exclude<UnitStatus, "ok">, string> = {
+  failed: "#a12f2a",
+  timeout: "#92400e",
+  unavailable: "#4b5563",
 };
 
 const SERIES_COLORS = [
-  "#68e0cf",
-  "#ffb86b",
-  "#8fb8ff",
-  "#ef7f93",
-  "#b6e36d",
-  "#d39bff",
-  "#f1d36f",
-  "#69c2ff",
-  "#ffa8d6",
-  "#9ad4a2",
-  "#c7a6ff",
-  "#ff8f70",
+  "#007065",
+  "#d97706",
+  "#2563eb",
+  "#be185d",
+  "#65a30d",
+  "#7c3aed",
+  "#b45309",
+  "#0284c7",
+  "#db2777",
+  "#15803d",
+  "#9333ea",
+  "#dc2626",
 ];
 
 export function mountHeatmap(element: HTMLElement, cells: readonly MatrixCell[]): EChartsType {
@@ -68,13 +74,13 @@ export function mountHeatmap(element: HTMLElement, cells: readonly MatrixCell[])
           ? undefined
           : {
               color: STATUS_COLORS[cell.status],
-              borderColor: "#496166",
-              borderWidth: 1,
+              borderColor: "#ffffff",
+              borderWidth: 4,
             },
       label: {
         show: true,
         formatter: label,
-        color: cell.status === "ok" ? "#071a1c" : "#f4f7f3",
+        color: cell.status === "ok" ? "#111827" : STATUS_TEXT_COLORS[cell.status],
         fontWeight: 700,
       },
     };
@@ -98,13 +104,14 @@ export function mountHeatmap(element: HTMLElement, cells: readonly MatrixCell[])
       description: `Latest candidate versus stable performance matrix. ${textualSummary}`,
       decal: { show: true },
     },
-    grid: { top: 12, right: 28, bottom: 48, left: 112 },
+    grid: { top: 10, right: 18, bottom: 44, left: element.clientWidth < 560 ? 92 : 106 },
     tooltip: {
       trigger: "item",
       renderMode: "richText",
-      borderColor: "#496166",
-      backgroundColor: "#102a2d",
-      textStyle: { color: "#f4f7f3" },
+      borderColor: "#d1d5db",
+      backgroundColor: "#ffffff",
+      textStyle: { color: "#111827" },
+      extraCssText: "box-shadow: 0 8px 24px rgba(17,24,39,.1); border-radius: 8px;",
       formatter: (parameter: unknown) => {
         const item = parameter as { data?: { cell?: MatrixCell } };
         const cell = item.data?.cell;
@@ -125,34 +132,39 @@ export function mountHeatmap(element: HTMLElement, cells: readonly MatrixCell[])
     xAxis: {
       type: "category",
       data: BACKENDS.map((backend) => BACKEND_LABELS[backend]),
-      axisLine: { lineStyle: { color: "#496166" } },
+      axisLine: { lineStyle: { color: "#d1d5db" } },
       axisTick: { show: false },
-      axisLabel: { color: "#b7c7c5", interval: 0 },
+      axisLabel: { color: "#4b5563", fontSize: 11, interval: 0 },
     },
     yAxis: {
       type: "category",
       data: OS_IDS.map((os) => OS_LABELS[os]),
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { color: "#b7c7c5" },
+      axisLabel: { color: "#4b5563", fontSize: 11 },
     },
     visualMap: {
       min: -extent,
       max: extent,
       show: false,
-      inRange: { color: ["#59d6b1", "#d7e4d0", "#f37d78"] },
+      inRange: { color: ["#66cbb7", "#e9efed", "#ee9b96"] },
     },
     series: [
       {
         name: "Candidate delta",
         type: "heatmap",
         data,
+        itemStyle: {
+          borderColor: "#ffffff",
+          borderWidth: 4,
+          borderRadius: 6,
+        },
         emphasis: {
           itemStyle: {
-            borderColor: "#ffffff",
+            borderColor: "#007065",
             borderWidth: 2,
-            shadowBlur: 12,
-            shadowColor: "rgba(0,0,0,.35)",
+            shadowBlur: 8,
+            shadowColor: "rgba(17,24,39,.16)",
           },
         },
       },
@@ -190,16 +202,17 @@ export function mountTrendChart(
     legend: {
       type: "scroll",
       top: 0,
-      textStyle: { color: "#b7c7c5", fontSize: 11 },
-      pageTextStyle: { color: "#b7c7c5" },
-      pageIconColor: "#68e0cf",
-      pageIconInactiveColor: "#496166",
+      textStyle: { color: "#4b5563", fontSize: 11 },
+      pageTextStyle: { color: "#6b7280" },
+      pageIconColor: "#007065",
+      pageIconInactiveColor: "#d1d5db",
     },
     tooltip: {
       trigger: "axis",
-      borderColor: "#496166",
-      backgroundColor: "#102a2d",
-      textStyle: { color: "#f4f7f3" },
+      borderColor: "#d1d5db",
+      backgroundColor: "#ffffff",
+      textStyle: { color: "#111827" },
+      extraCssText: "box-shadow: 0 8px 24px rgba(17,24,39,.1); border-radius: 8px;",
       valueFormatter: (value: unknown) =>
         metric === "duration"
           ? formatDuration(typeof value === "number" ? value : Number(value))
@@ -208,20 +221,20 @@ export function mountTrendChart(
     xAxis: {
       type: "time",
       boundaryGap: false,
-      axisLine: { lineStyle: { color: "#496166" } },
+      axisLine: { lineStyle: { color: "#d1d5db" } },
       axisTick: { show: false },
-      axisLabel: { color: "#91a5a2", hideOverlap: true },
+      axisLabel: { color: "#6b7280", hideOverlap: true },
       splitLine: { show: false },
     },
     yAxis: {
       type: "value",
       name: metric === "duration" ? "Median ms" : "Delta %",
-      nameTextStyle: { color: "#91a5a2" },
+      nameTextStyle: { color: "#6b7280" },
       axisLabel: {
-        color: "#91a5a2",
+        color: "#6b7280",
         formatter: metric === "duration" ? "{value} ms" : "{value}%",
       },
-      splitLine: { lineStyle: { color: "rgba(143, 174, 170, .12)" } },
+      splitLine: { lineStyle: { color: "#eef0f2" } },
     },
     series: series.map((item) => ({
       id: item.id,
