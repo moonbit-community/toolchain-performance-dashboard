@@ -8,7 +8,7 @@ import {
   type RunSummaryV1,
   type UnitStatus,
 } from "../../src/data/types.js";
-import { makeToolchainPair } from "../helpers.js";
+import { makeToolchainPair, TEST_CORE_SHA } from "../helpers.js";
 
 function workflow(runId: string, attempt = 1) {
   return {
@@ -63,7 +63,7 @@ function summary(
     id: `${runId}-1`,
     startedAt: new Date(Date.parse(completedAt) - 10 * 60_000).toISOString(),
     completedAt,
-    coreSha: "50c136025f4385ab131d82e68d79ebdd46ce50c2",
+    coreSha: TEST_CORE_SHA,
     workflow: workflow(runId),
     toolchains: OS_IDS.map((os) => makeToolchainPair(os, channel)),
     comparisons: runComparisons,

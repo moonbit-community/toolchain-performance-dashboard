@@ -134,8 +134,8 @@ export interface BenchmarkComparisonV1 {
 
 export interface CoreRevisionV1 {
   repository: "moonbitlang/core";
-  sha: "50c136025f4385ab131d82e68d79ebdd46ce50c2";
-  url: "https://github.com/moonbitlang/core/commit/50c136025f4385ab131d82e68d79ebdd46ce50c2";
+  sha: string;
+  url: string;
 }
 
 export interface WorkflowMetadataV1 {
@@ -165,6 +165,7 @@ export interface BenchmarkShardV1 {
   os: OsId;
   startedAt: string;
   completedAt: string;
+  core: CoreRevisionV1;
   runner: RunnerInfoV1;
   toolchains: ToolchainPairV1;
   command: BenchmarkCommandV1;
@@ -206,11 +207,16 @@ export interface RunIndexV1 {
   runs: RunSummaryV1[];
 }
 
-export const CORE_REVISION: CoreRevisionV1 = {
-  repository: "moonbitlang/core",
-  sha: "50c136025f4385ab131d82e68d79ebdd46ce50c2",
-  url: "https://github.com/moonbitlang/core/commit/50c136025f4385ab131d82e68d79ebdd46ce50c2",
-};
+export function coreRevision(sha: string): CoreRevisionV1 {
+  if (!/^[0-9a-f]{40}$/.test(sha)) {
+    throw new Error("Core revision must be a full Git commit SHA");
+  }
+  return {
+    repository: "moonbitlang/core",
+    sha,
+    url: `https://github.com/moonbitlang/core/commit/${sha}`,
+  };
+}
 
 export const BENCHMARK_COMMAND: BenchmarkCommandV1 = {
   executable: "moon",

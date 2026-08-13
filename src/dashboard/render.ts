@@ -44,7 +44,7 @@ function renderHeader(): string {
         </a>
         <nav aria-label="Project links">
           <a href="https://github.com/moonbit-community/toolchain-performance-dashboard" target="_blank" rel="noreferrer">Source <span aria-hidden="true">↗</span></a>
-          <a href="https://github.com/moonbitlang/core/commit/50c136025f4385ab131d82e68d79ebdd46ce50c2" target="_blank" rel="noreferrer">Core baseline <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/moonbitlang/core" target="_blank" rel="noreferrer">Core source <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
     </header>`;
@@ -56,12 +56,12 @@ function renderProtocol(): string {
       <details class="disclosure protocol">
         <summary>
           <span class="summary-title"><small>Method</small><strong id="protocol-title">Benchmark protocol</strong></span>
-          <span class="summary-meta">Fixed source · 5 samples · daily</span>
+          <span class="summary-meta">Latest source · 5 samples · daily</span>
         </summary>
         <div class="disclosure-body protocol-body">
-        <p>Every run checks the same core revision with clean output directories. Five un-warmed samples are paired and alternated on the same runner.</p>
+        <p>Every run resolves the latest core revision, then uses it across all runners with clean output directories. Five un-warmed samples are paired and alternated on the same runner.</p>
           <dl class="protocol-grid">
-            <div><dt>Source</dt><dd><code>core@50c13602</code></dd></div>
+            <div><dt>Source</dt><dd><code>core@latest</code></dd></div>
             <div><dt>Backends</dt><dd>Wasm · Wasm GC · JS · Native</dd></div>
             <div><dt>Samples</dt><dd>5 per toolchain and cell</dd></div>
             <div><dt>Schedule</dt><dd>Daily · 02:00 UTC</dd></div>
@@ -151,7 +151,7 @@ function renderMatrix(summary: RunSummaryV1): string {
         <div class="dashboard-heading-copy">
           <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> Latest comparison</p>
           <h1 id="matrix-title">OS × backend delta</h1>
-          <p class="lede">Stable versus <strong>${escapeHtml(channels.join(" / "))}</strong> on a fixed core revision. Negative deltas mean the candidate finished sooner.</p>
+          <p class="lede">Stable versus <strong>${escapeHtml(channels.join(" / "))}</strong> on the core revision resolved for this run. Negative deltas mean the candidate finished sooner.</p>
         </div>
         <div class="run-summary" aria-label="Latest run summary">
           <div class="run-summary-primary">${statusBadge(summary.health.status)}<span><strong>${summary.health.okComparisons} / ${summary.health.totalComparisons}</strong> comparable cells</span></div>
@@ -202,7 +202,7 @@ function renderMatrix(summary: RunSummaryV1): string {
         <article>
           <span>Core revision</span>
           <a href="https://github.com/moonbitlang/core/commit/${escapeHtml(summary.coreSha)}" target="_blank" rel="noreferrer"><code>${escapeHtml(shortSha(summary.coreSha))}</code></a>
-          <small>Fixed across all runs</small>
+          <small>Shared by all runners in this run</small>
         </article>
       </div>
     </section>`;

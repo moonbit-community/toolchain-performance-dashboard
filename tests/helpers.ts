@@ -2,16 +2,21 @@ import {
   BACKENDS,
   BENCHMARK_COMMAND,
   SCHEMA_VERSION,
+  coreRevision,
   type BenchmarkSampleV1,
   type BenchmarkShardV1,
   type BenchmarkUnitV1,
   type CandidateChannel,
+  type CoreRevisionV1,
   type OsId,
   type ToolchainChannel,
   type ToolchainPairV1,
   type ToolchainRole,
   type ToolchainVersionV1,
 } from "../src/data/types.js";
+
+export const TEST_CORE_SHA = "0123456789abcdef0123456789abcdef01234567";
+export const TEST_CORE_REVISION = coreRevision(TEST_CORE_SHA);
 
 export function makeToolchain(
   channel: ToolchainChannel,
@@ -107,6 +112,7 @@ export function makeUnit(
 export function makeShard(
   os: OsId,
   candidateChannel: CandidateChannel = "pre-release",
+  core: CoreRevisionV1 = TEST_CORE_REVISION,
 ): BenchmarkShardV1 {
   return {
     schemaVersion: SCHEMA_VERSION,
@@ -114,6 +120,7 @@ export function makeShard(
     os,
     startedAt: "2026-08-09T02:00:00.000Z",
     completedAt: "2026-08-09T02:10:00.000Z",
+    core,
     runner: {
       os,
       label:

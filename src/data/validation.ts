@@ -9,6 +9,7 @@ import {
   type BenchmarkShardV1,
   type BenchmarkStatsV1,
   type BenchmarkUnitV1,
+  type CoreRevisionV1,
   type RunIndexV1,
   type RunSummaryV1,
   type RunnerInfoV1,
@@ -119,6 +120,20 @@ function validateWorkflow(value: unknown, path: string): asserts value is Workfl
   }
   integer(item.runAttempt, `${path}.runAttempt`);
   integer(item.runNumber, `${path}.runNumber`);
+}
+
+function validateCoreRevision(value: unknown, path: string): asserts value is CoreRevisionV1 {
+  const item = record(value, path);
+  if (item.repository !== "moonbitlang/core") {
+    throw new DataValidationError(`${path}.repository must equal moonbitlang/core`);
+  }
+  string(item.sha, `${path}.sha`);
+  if (!/^[0-9a-f]{40}$/.test(item.sha)) {
+    throw new DataValidationError(`${path}.sha must be a full Git commit SHA`);
+  }
+  if (item.url !== `https://github.com/moonbitlang/core/commit/${item.sha}`) {
+    throw new DataValidationError(`${path}.url must link to the core commit`);
+  }
 }
 
 function validateToolchain(
@@ -311,8 +326,9 @@ function validateSummary(value: unknown, path: string): asserts value is RunSumm
   nonEmptyString(item.id, `${path}.id`);
   isoDate(item.startedAt, `${path}.startedAt`);
   isoDate(item.completedAt, `${path}.completedAt`);
-  if (item.coreSha !== "50c136025f4385ab131d82e68d79ebdd46ce50c2") {
-    throw new DataValidationError(`${path}.coreSha is not the fixed core revision`);
+  string(item.coreSha, `${path}.coreSha`);
+  if (!/^[0-9a-f]{40}$/.test(item.coreSha)) {
+    throw new DataValidationError(`${path}.coreSha must be a full Git commit SHA`);
   }
   validateWorkflow(item.workflow, `${path}.workflow`);
   array(item.toolchains, `${path}.toolchains`);
@@ -365,6 +381,7 @@ export function assertBenchmarkShardV1(value: unknown): asserts value is Benchma
   literal(item.os, OS_IDS, "shard.os");
   isoDate(item.startedAt, "shard.startedAt");
   isoDate(item.completedAt, "shard.completedAt");
+  validateCoreRevision(item.core, "shard.core");
   validateRunner(item.runner, "shard.runner");
   validateToolchainPair(item.toolchains, "shard.toolchains");
   validateCommand(item.command, "shard.command");
@@ -392,14 +409,7 @@ export function assertBenchmarkRunV1(value: unknown): asserts value is Benchmark
   isoDate(item.startedAt, "run.startedAt");
   isoDate(item.completedAt, "run.completedAt");
   isoDate(item.collectedAt, "run.collectedAt");
-  const core = record(item.core, "run.core");
-  if (
-    core.repository !== "moonbitlang/core" ||
-    core.sha !== "50c136025f4385ab131d82e68d79ebdd46ce50c2" ||
-    core.url !== "https://github.com/moonbitlang/core/commit/50c136025f4385ab131d82e68d79ebdd46ce50c2"
-  ) {
-    throw new DataValidationError("run.core must be the fixed V1 core revision");
-  }
+  validateCoreRevision(item.core, "run.core");
   validateWorkflow(item.workflow, "run.workflow");
   validateCommand(item.command, "run.command");
   array(item.runners, "run.runners");

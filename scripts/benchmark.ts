@@ -1,11 +1,14 @@
+import { execFile } from "node:child_process";
 import { mkdir, rename, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { promisify } from "node:util";
 import {
   BACKENDS,
   BENCHMARK_COMMAND,
   OS_IDS,
   SCHEMA_VERSION,
+  coreRevision,
   type BenchmarkShardV1,
   type BenchmarkUnitV1,
   type OsId,
@@ -14,6 +17,8 @@ import { assertBenchmarkShardV1 } from "../src/data/validation.js";
 import { installComparisonToolchains } from "./lib/install.js";
 import { collectRunnerInfo } from "./lib/runner.js";
 import { sampleBackendPair, type RuntimeToolchain } from "./lib/sampling.js";
+
+const execFileAsync = promisify(execFile);
 
 interface CliOptions {
   os: OsId;
@@ -70,8 +75,24 @@ async function atomicWriteJson(file: string, value: unknown): Promise<void> {
   await rename(temporary, file);
 }
 
+async function resolveCoreRevision(coreDirectory: string) {
+  try {
+    const { stdout } = await execFileAsync(
+      "git",
+      ["-C", coreDirectory, "rev-parse", "--verify", "HEAD^{commit}"],
+      { encoding: "utf8" },
+    );
+    return coreRevision(stdout.trim());
+  } catch (error) {
+    throw new Error(`Unable to resolve the core Git revision in ${coreDirectory}`, {
+      cause: error,
+    });
+  }
+}
+
 async function main(): Promise<void> {
   const options = parseOptions();
+  const core = await resolveCoreRevision(options.coreDirectory);
   const startedAt = new Date().toISOString();
   const installed = await installComparisonToolchains(
     options.os,
@@ -116,6 +137,7 @@ async function main(): Promise<void> {
     os: options.os,
     startedAt,
     completedAt: new Date().toISOString(),
+    core,
     runner: collectRunnerInfo(options.os),
     toolchains: installed.published,
     command: BENCHMARK_COMMAND,

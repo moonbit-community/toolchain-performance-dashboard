@@ -6,7 +6,7 @@ The dashboard is intended for trend detection, not a performance gate. GitHub-ho
 
 ## Benchmark protocol
 
-- Source is permanently fixed at [`moonbitlang/core@50c1360`](https://github.com/moonbitlang/core/commit/50c136025f4385ab131d82e68d79ebdd46ce50c2).
+- At the start of each workflow, the latest commit on [`moonbitlang/core`](https://github.com/moonbitlang/core) is resolved once. All three runners then check out that same revision.
 - The scheduled workflow runs every day at `02:00 UTC` (`10:00 CST`) and supports manual dispatch.
 - Runner labels are fixed to `ubuntu-24.04`, `windows-2025`, and `macos-15`.
 - Backends are `wasm`, `wasm-gc`, `js`, and `native`.
@@ -61,11 +61,11 @@ The collector downloads official MoonBit installers and writes into isolated `MO
 ```sh
 npm run benchmark -- \
   --os ubuntu \
-  --core-dir /path/to/core-at-50c1360 \
+  --core-dir /path/to/core \
   --output artifacts/shard-ubuntu.json
 ```
 
-Aggregation expects one valid shard for each OS:
+The core directory must be a Git checkout because the collector records its exact `HEAD` commit. Aggregation expects one valid shard for each OS, all collected from the same core revision:
 
 ```sh
 npm run aggregate -- --artifacts-dir artifacts --data-dir public/data
@@ -80,4 +80,4 @@ Before enabling automation:
 3. Ensure branch protection permits the benchmark workflow's `GITHUB_TOKEN` to push data commits to `main`, or provide an equivalent approved integration.
 4. Run the **Benchmark** workflow manually once. Confirm 24 units, 120 samples, one data commit, and a Pages deployment at <https://moonbit-community.github.io/toolchain-performance-dashboard/>.
 
-The project intentionally has no alerting, regression gate, history retention limit, or automatic core baseline update.
+The project intentionally has no alerting, regression gate, or history retention limit.

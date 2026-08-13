@@ -9,8 +9,8 @@ import {
   sortAndDeduplicateSummaries,
   summarizeRun,
 } from "../scripts/lib/aggregate.js";
-import type { WorkflowMetadataV1 } from "../src/data/types.js";
-import { makeShard } from "./helpers.js";
+import { coreRevision, type WorkflowMetadataV1 } from "../src/data/types.js";
+import { makeShard, TEST_CORE_SHA } from "./helpers.js";
 
 const temporaryDirectories: string[] = [];
 const workflow: WorkflowMetadataV1 = {
@@ -43,7 +43,27 @@ describe("run aggregation and history publication", () => {
     assert.equal(run.health.status, "healthy");
     assert.equal(run.health.okUnits, 24);
     assert.equal(run.health.okComparisons, 12);
+    assert.equal(run.core.sha, TEST_CORE_SHA);
     assert.deepEqual(run.runners.map((runner) => runner.os), ["ubuntu", "windows", "macos"]);
+  });
+
+  it("rejects shards collected from different core revisions", () => {
+    assert.throws(
+      () =>
+        aggregateShards(
+          [
+            makeShard("ubuntu"),
+            makeShard("windows"),
+            makeShard(
+              "macos",
+              "pre-release",
+              coreRevision("fedcba9876543210fedcba9876543210fedcba98"),
+            ),
+          ],
+          workflow,
+        ),
+      /All OS shards must use the same core revision/,
+    );
   });
 
   it("sorts newest first and deduplicates workflow run/attempt", () => {

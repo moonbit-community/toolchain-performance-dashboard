@@ -10,8 +10,29 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  resolve-core:
+    name: Resolve latest core revision
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      sha: ${{ steps.revision.outputs.sha }}
+    steps:
+      - name: Check out latest core
+        uses: actions/checkout@v4
+        with:
+          repository: moonbitlang/core
+          path: benchmark-core
+          persist-credentials: false
+
+      - name: Record core revision
+        id: revision
+        shell: bash
+        run: echo "sha=$(git -C benchmark-core rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
   benchmark:
     name: Benchmark (${{ matrix.id }})
+    needs: resolve-core
     permissions:
       contents: read
     strategy:
@@ -32,11 +53,11 @@ jobs:
       - name: Check out dashboard
         uses: actions/checkout@v4
 
-      - name: Check out fixed core revision
+      - name: Check out resolved core revision
         uses: actions/checkout@v4
         with:
           repository: moonbitlang/core
-          ref: 50c136025f4385ab131d82e68d79ebdd46ce50c2
+          ref: ${{ needs.resolve-core.outputs.sha }}
           path: benchmark-core
           persist-credentials: false
 

@@ -3,7 +3,6 @@ import path from "node:path";
 import {
   BACKENDS,
   BENCHMARK_COMMAND,
-  CORE_REVISION,
   OS_IDS,
   SCHEMA_VERSION,
   type BenchmarkComparisonV1,
@@ -149,6 +148,10 @@ export function aggregateShards(
   }
   const orderedShards = OS_IDS.map((os) => byOs.get(os)!);
   for (const shard of orderedShards) assertBenchmarkShardV1(shard);
+  const core = orderedShards[0].core;
+  if (orderedShards.some((shard) => shard.core.sha !== core.sha)) {
+    throw new Error("All OS shards must use the same core revision");
+  }
   const units = orderedShards.flatMap((shard) => shard.units);
   const comparisons: BenchmarkComparisonV1[] = [];
   for (const os of OS_IDS) {
@@ -175,7 +178,7 @@ export function aggregateShards(
       .map((shard) => shard.completedAt)
       .sort((left, right) => Date.parse(right) - Date.parse(left))[0],
     collectedAt,
-    core: CORE_REVISION,
+    core,
     workflow,
     command: BENCHMARK_COMMAND,
     runners: orderedShards.map((shard) => shard.runner),
