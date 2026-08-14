@@ -73,7 +73,7 @@ function makeSample(
     role,
     channel,
     targetDirId: `${role}-${iteration}`,
-    startedAt: `2026-08-09T02:00:0${iteration}.000Z`,
+    startedAt: `2026-08-09T02:00:${String(iteration).padStart(2, "0")}.000Z`,
     durationMs,
     status: "ok",
     exitCode: 0,
@@ -89,8 +89,9 @@ export function makeUnit(
 ): BenchmarkUnitV1 {
   const channel: ToolchainChannel = role === "stable" ? "stable" : candidateChannel;
   const base = role === "stable" ? 100 : 90;
-  const samples = [1, 2, 3, 4, 5].map((iteration) =>
-    makeSample(iteration, role, channel, base + iteration),
+  const samples = Array.from(
+    { length: BENCHMARK_COMMAND.iterations },
+    (_, index) => makeSample(index + 1, role, channel, base + index + 1),
   );
   return {
     id: `${os}/${backend}/${role}`,
@@ -102,8 +103,8 @@ export function makeUnit(
     samples,
     stats: {
       minMs: base + 1,
-      medianMs: base + 3,
-      maxMs: base + 5,
+      medianMs: base + (BENCHMARK_COMMAND.iterations + 1) / 2,
+      maxMs: base + BENCHMARK_COMMAND.iterations,
     },
     error: null,
   };

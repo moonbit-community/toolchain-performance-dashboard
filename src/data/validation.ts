@@ -1,5 +1,6 @@
 import {
   BACKENDS,
+  BENCHMARK_COMMAND,
   CANDIDATE_CHANNELS,
   OS_IDS,
   UNIT_STATUSES,
@@ -213,7 +214,7 @@ function validateCommand(value: unknown, path: string): void {
   if (environment.MOONC_RC_CONVENTION !== "borrow") {
     throw new DataValidationError(`${path}.environment.MOONC_RC_CONVENTION must equal borrow`);
   }
-  if (item.iterations !== 5 || item.timeoutMs !== 120_000 || item.warmup !== false || item.freshTargetDir !== true || item.ordering !== "alternating-first") {
+  if (item.iterations !== BENCHMARK_COMMAND.iterations || item.timeoutMs !== 120_000 || item.warmup !== false || item.freshTargetDir !== true || item.ordering !== "alternating-first") {
     throw new DataValidationError(`${path} does not match the V1 benchmark protocol`);
   }
 }
@@ -257,8 +258,13 @@ function validateUnit(value: unknown, path: string): asserts value is BenchmarkU
     if (error.exitCode !== null) integer(error.exitCode, `${path}.error.exitCode`);
     string(error.summary, `${path}.error.summary`);
   }
-  if (item.status === "ok" && (item.samples.length !== 5 || item.stats === null)) {
-    throw new DataValidationError(`${path} ok units must contain five samples and stats`);
+  if (
+    item.status === "ok" &&
+    (item.samples.length !== BENCHMARK_COMMAND.iterations || item.stats === null)
+  ) {
+    throw new DataValidationError(
+      `${path} ok units must contain ${BENCHMARK_COMMAND.iterations} samples and stats`,
+    );
   }
   if (item.status !== "ok" && item.stats !== null) {
     throw new DataValidationError(`${path} non-ok units must not contain stats`);
@@ -266,8 +272,13 @@ function validateUnit(value: unknown, path: string): asserts value is BenchmarkU
   if (item.status === "unavailable" && item.samples.length !== 0) {
     throw new DataValidationError(`${path} unavailable units must not contain samples`);
   }
-  if (item.status !== "unavailable" && item.samples.length !== 5) {
-    throw new DataValidationError(`${path} measured units must contain five samples`);
+  if (
+    item.status !== "unavailable" &&
+    item.samples.length !== BENCHMARK_COMMAND.iterations
+  ) {
+    throw new DataValidationError(
+      `${path} measured units must contain ${BENCHMARK_COMMAND.iterations} samples`,
+    );
   }
   if (item.status !== "ok" && item.error === null) {
     throw new DataValidationError(`${path} non-ok units must include an error`);

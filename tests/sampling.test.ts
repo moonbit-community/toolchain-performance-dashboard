@@ -40,7 +40,7 @@ afterEach(async () => {
 });
 
 describe("paired sampling", () => {
-  it("runs five samples, alternates the first toolchain, and uses fresh target directories", async () => {
+  it("runs 30 samples, alternates the first toolchain, and uses fresh target directories", async () => {
     const fake = await fakeMoon();
     const result = await sampleBackendPair({
       os: "ubuntu",
@@ -70,7 +70,9 @@ describe("paired sampling", () => {
       timeoutMs: 2_000,
     });
 
-    assert.deepEqual(createAlternatingSchedule().map((item) => item.role), [
+    const schedule = createAlternatingSchedule();
+    assert.equal(schedule.length, 60);
+    assert.deepEqual(schedule.slice(0, 10).map((item) => item.role), [
       "stable",
       "candidate",
       "candidate",
@@ -82,16 +84,16 @@ describe("paired sampling", () => {
       "stable",
       "candidate",
     ]);
-    assert.equal(result.units[0].samples.length, 5);
-    assert.equal(result.units[1].samples.length, 5);
+    assert.equal(result.units[0].samples.length, 30);
+    assert.equal(result.units[1].samples.length, 30);
     assert.equal(result.units.every((unit) => unit.status === "ok" && unit.stats !== null), true);
 
     const calls = (await readFile(fake.log, "utf8"))
       .trim()
       .split("\n")
       .map((line) => JSON.parse(line) as { role: string; args: string[]; target: string; existedBefore: boolean });
-    assert.deepEqual(calls.map((call) => call.role), createAlternatingSchedule().map((item) => item.role));
-    assert.equal(new Set(calls.map((call) => call.target)).size, 10);
+    assert.deepEqual(calls.map((call) => call.role), schedule.map((item) => item.role));
+    assert.equal(new Set(calls.map((call) => call.target)).size, 60);
     assert.equal(calls.every((call) => call.existedBefore === false), true);
     assert.equal(
       calls.every(

@@ -1,5 +1,6 @@
 import {
   BACKENDS,
+  BENCHMARK_COMMAND,
   CANDIDATE_CHANNELS,
   OS_IDS,
   type BenchmarkRunV1,
@@ -56,14 +57,14 @@ function renderProtocol(): string {
       <details class="disclosure protocol">
         <summary>
           <span class="summary-title"><small>Method</small><strong id="protocol-title">Benchmark protocol</strong></span>
-          <span class="summary-meta">Latest source · 5 samples · daily</span>
+          <span class="summary-meta">Latest source · ${BENCHMARK_COMMAND.iterations} samples · daily</span>
         </summary>
         <div class="disclosure-body protocol-body">
-        <p>Every run resolves the latest core revision, then uses it across all runners with clean output directories. Five un-warmed samples are paired and alternated on the same runner.</p>
+        <p>Every run resolves the latest core revision, then uses it across all runners with clean output directories. ${BENCHMARK_COMMAND.iterations} un-warmed samples are paired and alternated on the same runner.</p>
           <dl class="protocol-grid">
             <div><dt>Source</dt><dd><code>core@latest</code></dd></div>
             <div><dt>Backends</dt><dd>Wasm · Wasm GC · JS · Native</dd></div>
-            <div><dt>Samples</dt><dd>5 per toolchain and cell</dd></div>
+            <div><dt>Samples</dt><dd>${BENCHMARK_COMMAND.iterations} per toolchain and cell</dd></div>
             <div><dt>Schedule</dt><dd>Daily · 02:00 UTC</dd></div>
           </dl>
         </div>
@@ -330,7 +331,7 @@ function renderRunDetails(run: BenchmarkRunV1): string {
           <div class="detail-card">
         <div class="table-scroll">
           <table class="sample-table">
-            <thead><tr><th scope="col">Runner</th><th scope="col">Backend</th><th scope="col">Toolchain</th><th scope="col">Status</th><th scope="col">Five samples</th><th scope="col">Min / median / max</th></tr></thead>
+            <thead><tr><th scope="col">Runner</th><th scope="col">Backend</th><th scope="col">Toolchain</th><th scope="col">Status</th><th scope="col">${BENCHMARK_COMMAND.iterations} samples</th><th scope="col">Min / median / max</th></tr></thead>
             <tbody>
               ${run.units
                 .map(
@@ -381,7 +382,7 @@ function renderRunDetails(run: BenchmarkRunV1): string {
                     (unit) => `<li><strong>${escapeHtml(`${unit.os}/${unit.backend}/${unit.role}`)}</strong> ${statusBadge(unit.status)}<pre>${escapeHtml(unit.error?.summary ?? "No error detail was recorded")}</pre></li>`,
                   )
                   .join("")}</ul></details>`
-              : `<div class="success-panel"><span aria-hidden="true">✓</span><p><strong>All 24 units completed.</strong> Every comparison contains five stable and five candidate samples.</p></div>`
+              : `<div class="success-panel"><span aria-hidden="true">✓</span><p><strong>All 24 units completed.</strong> Every comparison contains ${BENCHMARK_COMMAND.iterations} stable and ${BENCHMARK_COMMAND.iterations} candidate samples.</p></div>`
           }
         </div>
       </details>

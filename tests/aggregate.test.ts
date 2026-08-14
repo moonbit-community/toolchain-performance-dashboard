@@ -31,14 +31,14 @@ afterEach(async () => {
 });
 
 describe("run aggregation and history publication", () => {
-  it("combines three shards into 24 units, 120 samples, and 12 comparisons", () => {
+  it("combines three shards into 24 units, 720 samples, and 12 comparisons", () => {
     const run = aggregateShards(
       [makeShard("windows"), makeShard("macos"), makeShard("ubuntu")],
       workflow,
       "2026-08-09T02:11:00.000Z",
     );
     assert.equal(run.units.length, 24);
-    assert.equal(run.units.flatMap((unit) => unit.samples).length, 120);
+    assert.equal(run.units.flatMap((unit) => unit.samples).length, 720);
     assert.equal(run.comparisons.length, 12);
     assert.equal(run.health.status, "healthy");
     assert.equal(run.health.okUnits, 24);

@@ -76,7 +76,7 @@ export interface BenchmarkCommandV1 {
   environment: {
     MOONC_RC_CONVENTION: "borrow";
   };
-  iterations: 5;
+  iterations: 30;
   timeoutMs: 120000;
   warmup: false;
   freshTargetDir: true;
@@ -232,7 +232,7 @@ export const BENCHMARK_COMMAND: BenchmarkCommandV1 = {
   environment: {
     MOONC_RC_CONVENTION: "borrow",
   },
-  iterations: 5,
+  iterations: 30,
   timeoutMs: 120_000,
   warmup: false,
   freshTargetDir: true,
