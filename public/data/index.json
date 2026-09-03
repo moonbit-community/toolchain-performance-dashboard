@@ -1,7 +1,301 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-02T06:52:44.828Z",
+  "generatedAt": "2026-09-03T06:56:00.322Z",
   "runs": [
+    {
+      "schemaVersion": 1,
+      "id": "33723881294-1",
+      "startedAt": "2026-09-03T06:35:16.710Z",
+      "completedAt": "2026-09-03T06:55:22.075Z",
+      "coreSha": "cb45a68a0aaa16d26a8545309897a4e49145292b",
+      "workflow": {
+        "repository": "moonbit-community/toolchain-performance-dashboard",
+        "runId": "33723881294",
+        "runAttempt": 1,
+        "runNumber": 26,
+        "event": "schedule",
+        "ref": "refs/heads/main",
+        "sha": "1e863b6625995fc84ca4a70f9e810723b2e2d29b",
+        "url": "https://github.com/moonbit-community/toolchain-performance-dashboard/actions/runs/33723881294/attempts/1"
+      },
+      "toolchains": [
+        {
+          "os": "ubuntu",
+          "stable": {
+            "channel": "stable",
+            "requestedVersion": "latest",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.11+6ff76a5f9 (2026-08-28)",
+            "version": "v0.10.11+6ff76a5f9",
+            "commit": "6ff76a5f9",
+            "date": "2026-08-28",
+            "normalized": "v0.10.11+6ff76a5f9|6ff76a5f9|2026-08-28",
+            "errorSummary": null
+          },
+          "preRelease": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.11+6ff76a5f9 (2026-08-28)",
+            "version": "v0.10.11+6ff76a5f9",
+            "commit": "6ff76a5f9",
+            "date": "2026-08-28",
+            "normalized": "v0.10.11+6ff76a5f9|6ff76a5f9|2026-08-28",
+            "errorSummary": null
+          },
+          "candidate": {
+            "channel": "nightly",
+            "requestedVersion": "nightly",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.11+1fc52f506-nightly (2026-09-02)",
+            "version": "v0.10.11+1fc52f506-nightly",
+            "commit": "1fc52f506",
+            "date": "2026-09-02",
+            "normalized": "v0.10.11+1fc52f506-nightly|1fc52f506|2026-09-02",
+            "errorSummary": null
+          },
+          "selection": {
+            "selectedChannel": "nightly",
+            "stableMatchesPreRelease": true,
+            "reason": "pre-release-matches-stable"
+          }
+        },
+        {
+          "os": "windows",
+          "stable": {
+            "channel": "stable",
+            "requestedVersion": "latest",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.11+6ff76a5f9 (2026-08-28)",
+            "version": "v0.10.11+6ff76a5f9",
+            "commit": "6ff76a5f9",
+            "date": "2026-08-28",
+            "normalized": "v0.10.11+6ff76a5f9|6ff76a5f9|2026-08-28",
+            "errorSummary": null
+          },
+          "preRelease": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.11+6ff76a5f9 (2026-08-28)",
+            "version": "v0.10.11+6ff76a5f9",
+            "commit": "6ff76a5f9",
+            "date": "2026-08-28",
+            "normalized": "v0.10.11+6ff76a5f9|6ff76a5f9|2026-08-28",
+            "errorSummary": null
+          },
+          "candidate": {
+            "channel": "nightly",
+            "requestedVersion": "nightly",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.11+1fc52f506-nightly (2026-09-02)",
+            "version": "v0.10.11+1fc52f506-nightly",
+            "commit": "1fc52f506",
+            "date": "2026-09-02",
+            "normalized": "v0.10.11+1fc52f506-nightly|1fc52f506|2026-09-02",
+            "errorSummary": null
+          },
+          "selection": {
+            "selectedChannel": "nightly",
+            "stableMatchesPreRelease": true,
+            "reason": "pre-release-matches-stable"
+          }
+        },
+        {
+          "os": "macos",
+          "stable": {
+            "channel": "stable",
+            "requestedVersion": "latest",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.11+6ff76a5f9 (2026-08-28)",
+            "version": "v0.10.11+6ff76a5f9",
+            "commit": "6ff76a5f9",
+            "date": "2026-08-28",
+            "normalized": "v0.10.11+6ff76a5f9|6ff76a5f9|2026-08-28",
+            "errorSummary": null
+          },
+          "preRelease": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.11+6ff76a5f9 (2026-08-28)",
+            "version": "v0.10.11+6ff76a5f9",
+            "commit": "6ff76a5f9",
+            "date": "2026-08-28",
+            "normalized": "v0.10.11+6ff76a5f9|6ff76a5f9|2026-08-28",
+            "errorSummary": null
+          },
+          "candidate": {
+            "channel": "nightly",
+            "requestedVersion": "nightly",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.11+1fc52f506-nightly (2026-09-02)",
+            "version": "v0.10.11+1fc52f506-nightly",
+            "commit": "1fc52f506",
+            "date": "2026-09-02",
+            "normalized": "v0.10.11+1fc52f506-nightly|1fc52f506|2026-09-02",
+            "errorSummary": null
+          },
+          "selection": {
+            "selectedChannel": "nightly",
+            "stableMatchesPreRelease": true,
+            "reason": "pre-release-matches-stable"
+          }
+        }
+      ],
+      "comparisons": [
+        {
+          "id": "ubuntu/wasm",
+          "os": "ubuntu",
+          "backend": "wasm",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/lexbuf/lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target Wasm\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "ubuntu/wasm-gc",
+          "os": "ubuntu",
+          "backend": "wasm-gc",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/lexbuf/lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target WasmGC\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "ubuntu/js",
+          "os": "ubuntu",
+          "backend": "js",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/lexbuf/lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target Js\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "ubuntu/native",
+          "os": "ubuntu",
+          "backend": "native",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/lexbuf/lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target Native\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "windows/wasm",
+          "os": "windows",
+          "backend": "wasm",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\lexbuf\\lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target Wasm\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "windows/wasm-gc",
+          "os": "windows",
+          "backend": "wasm-gc",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\lexbuf\\lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target WasmGC\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "windows/js",
+          "os": "windows",
+          "backend": "js",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\lexbuf\\lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target Js\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "windows/native",
+          "os": "windows",
+          "backend": "native",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\lexbuf\\lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target Native\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "macos/wasm",
+          "os": "macos",
+          "backend": "wasm",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/lexbuf/lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target Wasm\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "macos/wasm-gc",
+          "os": "macos",
+          "backend": "wasm-gc",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/lexbuf/lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target WasmGC\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "macos/js",
+          "os": "macos",
+          "backend": "js",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/lexbuf/lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target Js\n\nCaused by:\n    failed when checking project"
+        },
+        {
+          "id": "macos/native",
+          "os": "macos",
+          "backend": "native",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Error: [4227]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/lexbuf/lexbuf_test.mbt:157:31 ]\n     │\n 157 │   lexbuf_test_run_async(() => work() catch { _ => panic() })\n     │                               ───┬──  \n     │                                  ╰──── This `async` function is cancellable, it cannot be invoked in a context that forbid cancellation\n─────╯\nFailed with 0 warnings, 1 errors.\nError: failed to run check for target Native\n\nCaused by:\n    failed when checking project"
+        }
+      ],
+      "health": {
+        "status": "failed",
+        "totalUnits": 24,
+        "okUnits": 12,
+        "failedUnits": 12,
+        "totalComparisons": 12,
+        "okComparisons": 0,
+        "parseFailures": 0
+      }
+    },
     {
       "schemaVersion": 1,
       "id": "33599171993-1",
