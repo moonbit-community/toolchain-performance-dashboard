@@ -1,7 +1,301 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T06:57:53.725Z",
+  "generatedAt": "2026-10-19T07:14:37.173Z",
   "runs": [
+    {
+      "schemaVersion": 1,
+      "id": "39213383284-1",
+      "startedAt": "2026-10-19T07:02:19.056Z",
+      "completedAt": "2026-10-19T07:14:07.283Z",
+      "coreSha": "9ecc6a8484269dcc1b0d0a16d0a37800104d9168",
+      "workflow": {
+        "repository": "moonbit-community/toolchain-performance-dashboard",
+        "runId": "39213383284",
+        "runAttempt": 1,
+        "runNumber": 72,
+        "event": "schedule",
+        "ref": "refs/heads/main",
+        "sha": "c29e1c9e14ca70bc02f7ba09e4c8b88715edac99",
+        "url": "https://github.com/moonbit-community/toolchain-performance-dashboard/actions/runs/39213383284/attempts/1"
+      },
+      "toolchains": [
+        {
+          "os": "ubuntu",
+          "stable": {
+            "channel": "stable",
+            "requestedVersion": "latest",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.15+943464bfa (2026-10-12)",
+            "version": "v0.10.15+943464bfa",
+            "commit": "943464bfa",
+            "date": "2026-10-12",
+            "normalized": "v0.10.15+943464bfa|943464bfa|2026-10-12",
+            "errorSummary": null
+          },
+          "preRelease": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.16+b1a0e846e (2026-10-16)",
+            "version": "v0.10.16+b1a0e846e",
+            "commit": "b1a0e846e",
+            "date": "2026-10-16",
+            "normalized": "v0.10.16+b1a0e846e|b1a0e846e|2026-10-16",
+            "errorSummary": null
+          },
+          "candidate": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.16+b1a0e846e (2026-10-16)",
+            "version": "v0.10.16+b1a0e846e",
+            "commit": "b1a0e846e",
+            "date": "2026-10-16",
+            "normalized": "v0.10.16+b1a0e846e|b1a0e846e|2026-10-16",
+            "errorSummary": null
+          },
+          "selection": {
+            "selectedChannel": "pre-release",
+            "stableMatchesPreRelease": false,
+            "reason": "pre-release-differs"
+          }
+        },
+        {
+          "os": "windows",
+          "stable": {
+            "channel": "stable",
+            "requestedVersion": "latest",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.15+943464bfa (2026-10-12)",
+            "version": "v0.10.15+943464bfa",
+            "commit": "943464bfa",
+            "date": "2026-10-12",
+            "normalized": "v0.10.15+943464bfa|943464bfa|2026-10-12",
+            "errorSummary": null
+          },
+          "preRelease": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.16+b1a0e846e (2026-10-16)",
+            "version": "v0.10.16+b1a0e846e",
+            "commit": "b1a0e846e",
+            "date": "2026-10-16",
+            "normalized": "v0.10.16+b1a0e846e|b1a0e846e|2026-10-16",
+            "errorSummary": null
+          },
+          "candidate": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.16+b1a0e846e (2026-10-16)",
+            "version": "v0.10.16+b1a0e846e",
+            "commit": "b1a0e846e",
+            "date": "2026-10-16",
+            "normalized": "v0.10.16+b1a0e846e|b1a0e846e|2026-10-16",
+            "errorSummary": null
+          },
+          "selection": {
+            "selectedChannel": "pre-release",
+            "stableMatchesPreRelease": false,
+            "reason": "pre-release-differs"
+          }
+        },
+        {
+          "os": "macos",
+          "stable": {
+            "channel": "stable",
+            "requestedVersion": "latest",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.15+943464bfa (2026-10-12)",
+            "version": "v0.10.15+943464bfa",
+            "commit": "943464bfa",
+            "date": "2026-10-12",
+            "normalized": "v0.10.15+943464bfa|943464bfa|2026-10-12",
+            "errorSummary": null
+          },
+          "preRelease": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.16+b1a0e846e (2026-10-16)",
+            "version": "v0.10.16+b1a0e846e",
+            "commit": "b1a0e846e",
+            "date": "2026-10-16",
+            "normalized": "v0.10.16+b1a0e846e|b1a0e846e|2026-10-16",
+            "errorSummary": null
+          },
+          "candidate": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.16+b1a0e846e (2026-10-16)",
+            "version": "v0.10.16+b1a0e846e",
+            "commit": "b1a0e846e",
+            "date": "2026-10-16",
+            "normalized": "v0.10.16+b1a0e846e|b1a0e846e|2026-10-16",
+            "errorSummary": null
+          },
+          "selection": {
+            "selectedChannel": "pre-release",
+            "stableMatchesPreRelease": false,
+            "reason": "pre-release-differs"
+          }
+        }
+      ],
+      "comparisons": [
+        {
+          "id": "ubuntu/wasm",
+          "os": "ubuntu",
+          "backend": "wasm",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2193.992214500002,
+          "candidateMedianMs": 2190.5491219999894,
+          "deltaPercent": -0.15693275834149154,
+          "errorSummary": null
+        },
+        {
+          "id": "ubuntu/wasm-gc",
+          "os": "ubuntu",
+          "backend": "wasm-gc",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2187.7192725000205,
+          "candidateMedianMs": 2093.6789395000087,
+          "deltaPercent": -4.298555769111408,
+          "errorSummary": null
+        },
+        {
+          "id": "ubuntu/js",
+          "os": "ubuntu",
+          "backend": "js",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2114.4494115000125,
+          "candidateMedianMs": 2037.5617785000068,
+          "deltaPercent": -3.6362956986263786,
+          "errorSummary": null
+        },
+        {
+          "id": "ubuntu/native",
+          "os": "ubuntu",
+          "backend": "native",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2189.731801999995,
+          "candidateMedianMs": 2097.240262999985,
+          "deltaPercent": -4.223875221409871,
+          "errorSummary": null
+        },
+        {
+          "id": "windows/wasm",
+          "os": "windows",
+          "backend": "wasm",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2621.4204500000014,
+          "candidateMedianMs": 2763.510999999995,
+          "deltaPercent": 5.420364749195173,
+          "errorSummary": null
+        },
+        {
+          "id": "windows/wasm-gc",
+          "os": "windows",
+          "backend": "wasm-gc",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2588.3389499999903,
+          "candidateMedianMs": 2494.994399999996,
+          "deltaPercent": -3.6063495470712867,
+          "errorSummary": null
+        },
+        {
+          "id": "windows/js",
+          "os": "windows",
+          "backend": "js",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2671.9624000000185,
+          "candidateMedianMs": 2624.0178000000014,
+          "deltaPercent": -1.7943590822990907,
+          "errorSummary": null
+        },
+        {
+          "id": "windows/native",
+          "os": "windows",
+          "backend": "native",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2908.3624999999884,
+          "candidateMedianMs": 2853.890000000072,
+          "deltaPercent": -1.8729611594124322,
+          "errorSummary": null
+        },
+        {
+          "id": "macos/wasm",
+          "os": "macos",
+          "backend": "wasm",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2801.8143335000022,
+          "candidateMedianMs": 3261.6544790000007,
+          "deltaPercent": 16.41222760558763,
+          "errorSummary": null
+        },
+        {
+          "id": "macos/wasm-gc",
+          "os": "macos",
+          "backend": "wasm-gc",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2666.515166499972,
+          "candidateMedianMs": 2688.2899164999835,
+          "deltaPercent": 0.8165995181115965,
+          "errorSummary": null
+        },
+        {
+          "id": "macos/js",
+          "os": "macos",
+          "backend": "js",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2522.7733749999898,
+          "candidateMedianMs": 2490.3044794999587,
+          "deltaPercent": -1.2870317969021374,
+          "errorSummary": null
+        },
+        {
+          "id": "macos/native",
+          "os": "macos",
+          "backend": "native",
+          "candidateChannel": "pre-release",
+          "status": "ok",
+          "stableMedianMs": 2583.8814169999678,
+          "candidateMedianMs": 2670.1935420000227,
+          "deltaPercent": 3.3404058108931407,
+          "errorSummary": null
+        }
+      ],
+      "health": {
+        "status": "healthy",
+        "totalUnits": 24,
+        "okUnits": 24,
+        "failedUnits": 0,
+        "totalComparisons": 12,
+        "okComparisons": 12,
+        "parseFailures": 0
+      }
+    },
     {
       "schemaVersion": 1,
       "id": "39105001266-1",
