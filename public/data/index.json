@@ -1,7 +1,301 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T08:55:30.569Z",
+  "generatedAt": "2026-11-03T08:47:26.323Z",
   "runs": [
+    {
+      "schemaVersion": 1,
+      "id": "41605349815-1",
+      "startedAt": "2026-11-03T08:43:27.646Z",
+      "completedAt": "2026-11-03T08:46:59.016Z",
+      "coreSha": "0b3bbc5df7e2d866dc4daa6642955b7f3af3fcf0",
+      "workflow": {
+        "repository": "moonbit-community/toolchain-performance-dashboard",
+        "runId": "41605349815",
+        "runAttempt": 1,
+        "runNumber": 87,
+        "event": "schedule",
+        "ref": "refs/heads/main",
+        "sha": "be5d2749d099a4113b31def602c8a8f0806bf749",
+        "url": "https://github.com/moonbit-community/toolchain-performance-dashboard/actions/runs/41605349815/attempts/1"
+      },
+      "toolchains": [
+        {
+          "os": "ubuntu",
+          "stable": {
+            "channel": "stable",
+            "requestedVersion": "latest",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.19+bee578715 (2026-11-02)",
+            "version": "v0.10.19+bee578715",
+            "commit": "bee578715",
+            "date": "2026-11-02",
+            "normalized": "v0.10.19+bee578715|bee578715|2026-11-02",
+            "errorSummary": null
+          },
+          "preRelease": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.19+bee578715 (2026-11-02)",
+            "version": "v0.10.19+bee578715",
+            "commit": "bee578715",
+            "date": "2026-11-02",
+            "normalized": "v0.10.19+bee578715|bee578715|2026-11-02",
+            "errorSummary": null
+          },
+          "candidate": {
+            "channel": "nightly",
+            "requestedVersion": "nightly",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.19+8e43a47fb-nightly (2026-11-03)",
+            "version": "v0.10.19+8e43a47fb-nightly",
+            "commit": "8e43a47fb",
+            "date": "2026-11-03",
+            "normalized": "v0.10.19+8e43a47fb-nightly|8e43a47fb|2026-11-03",
+            "errorSummary": null
+          },
+          "selection": {
+            "selectedChannel": "nightly",
+            "stableMatchesPreRelease": true,
+            "reason": "pre-release-matches-stable"
+          }
+        },
+        {
+          "os": "windows",
+          "stable": {
+            "channel": "stable",
+            "requestedVersion": "latest",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.19+bee578715 (2026-11-02)",
+            "version": "v0.10.19+bee578715",
+            "commit": "bee578715",
+            "date": "2026-11-02",
+            "normalized": "v0.10.19+bee578715|bee578715|2026-11-02",
+            "errorSummary": null
+          },
+          "preRelease": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.19+bee578715 (2026-11-02)",
+            "version": "v0.10.19+bee578715",
+            "commit": "bee578715",
+            "date": "2026-11-02",
+            "normalized": "v0.10.19+bee578715|bee578715|2026-11-02",
+            "errorSummary": null
+          },
+          "candidate": {
+            "channel": "nightly",
+            "requestedVersion": "nightly",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.19+8e43a47fb-nightly (2026-11-03)",
+            "version": "v0.10.19+8e43a47fb-nightly",
+            "commit": "8e43a47fb",
+            "date": "2026-11-03",
+            "normalized": "v0.10.19+8e43a47fb-nightly|8e43a47fb|2026-11-03",
+            "errorSummary": null
+          },
+          "selection": {
+            "selectedChannel": "nightly",
+            "stableMatchesPreRelease": true,
+            "reason": "pre-release-matches-stable"
+          }
+        },
+        {
+          "os": "macos",
+          "stable": {
+            "channel": "stable",
+            "requestedVersion": "latest",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.19+bee578715 (2026-11-02)",
+            "version": "v0.10.19+bee578715",
+            "commit": "bee578715",
+            "date": "2026-11-02",
+            "normalized": "v0.10.19+bee578715|bee578715|2026-11-02",
+            "errorSummary": null
+          },
+          "preRelease": {
+            "channel": "pre-release",
+            "requestedVersion": "pre-release",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.19+bee578715 (2026-11-02)",
+            "version": "v0.10.19+bee578715",
+            "commit": "bee578715",
+            "date": "2026-11-02",
+            "normalized": "v0.10.19+bee578715|bee578715|2026-11-02",
+            "errorSummary": null
+          },
+          "candidate": {
+            "channel": "nightly",
+            "requestedVersion": "nightly",
+            "installationStatus": "ok",
+            "parseStatus": "ok",
+            "rawVersion": "v0.10.19+8e43a47fb-nightly (2026-11-03)",
+            "version": "v0.10.19+8e43a47fb-nightly",
+            "commit": "8e43a47fb",
+            "date": "2026-11-03",
+            "normalized": "v0.10.19+8e43a47fb-nightly|8e43a47fb|2026-11-03",
+            "errorSummary": null
+          },
+          "selection": {
+            "selectedChannel": "nightly",
+            "stableMatchesPreRelease": true,
+            "reason": "pre-release-matches-stable"
+          }
+        }
+      ],
+      "comparisons": [
+        {
+          "id": "ubuntu/wasm",
+          "os": "ubuntu",
+          "backend": "wasm",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "n/tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nE…\nn/tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nE…"
+        },
+        {
+          "id": "ubuntu/wasm-gc",
+          "os": "ubuntu",
+          "backend": "wasm-gc",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "n/tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nE…\nn/tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nE…"
+        },
+        {
+          "id": "ubuntu/js",
+          "os": "ubuntu",
+          "backend": "js",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "n/tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nE…\nn/tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nE…"
+        },
+        {
+          "id": "ubuntu/native",
+          "os": "ubuntu",
+          "backend": "native",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "n/tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nE…\nn/tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /home/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nE…"
+        },
+        {
+          "id": "windows/wasm",
+          "os": "windows",
+          "backend": "wasm",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "le_to_json.mbt:116:7 ]\n     │\n 116 │   H : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:117:7 ]\n     │\n 117 │   I : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:118:7 ]\n     │\n 118 │   J : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:3 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │   ────────────────────┬───────────────────  \n     │                       ╰───────────────────── Expr Type Mismatch\n        has type : Array[A]\n        wanted   : Json\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:8 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │        ─┬  \n     │         ╰── Expr Type Mismatch\n        has type : B\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:12 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │            ─┬  \n     │             ╰── Expr Type Mismatch\n        has type : C\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        ha…\nle_to_json.mbt:116:7 ]\n     │\n 116 │   H : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:117:7 ]\n     │\n 117 │   I : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:118:7 ]\n     │\n 118 │   J : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:3 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │   ────────────────────┬───────────────────  \n     │                       ╰───────────────────── Expr Type Mismatch\n        has type : Array[A]\n        wanted   : Json\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:8 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │        ─┬  \n     │         ╰── Expr Type Mismatch\n        has type : B\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:12 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │            ─┬  \n     │             ╰── Expr Type Mismatch\n        has type : C\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        ha…"
+        },
+        {
+          "id": "windows/wasm-gc",
+          "os": "windows",
+          "backend": "wasm-gc",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "le_to_json.mbt:116:7 ]\n     │\n 116 │   H : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:117:7 ]\n     │\n 117 │   I : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:118:7 ]\n     │\n 118 │   J : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:3 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │   ────────────────────┬───────────────────  \n     │                       ╰───────────────────── Expr Type Mismatch\n        has type : Array[A]\n        wanted   : Json\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:8 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │        ─┬  \n     │         ╰── Expr Type Mismatch\n        has type : B\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:12 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │            ─┬  \n     │             ╰── Expr Type Mismatch\n        has type : C\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        ha…\nle_to_json.mbt:116:7 ]\n     │\n 116 │   H : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:117:7 ]\n     │\n 117 │   I : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:118:7 ]\n     │\n 118 │   J : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:3 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │   ────────────────────┬───────────────────  \n     │                       ╰───────────────────── Expr Type Mismatch\n        has type : Array[A]\n        wanted   : Json\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:8 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │        ─┬  \n     │         ╰── Expr Type Mismatch\n        has type : B\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:12 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │            ─┬  \n     │             ╰── Expr Type Mismatch\n        has type : C\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        ha…"
+        },
+        {
+          "id": "windows/js",
+          "os": "windows",
+          "backend": "js",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "le_to_json.mbt:116:7 ]\n     │\n 116 │   H : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:117:7 ]\n     │\n 117 │   I : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:118:7 ]\n     │\n 118 │   J : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:3 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │   ────────────────────┬───────────────────  \n     │                       ╰───────────────────── Expr Type Mismatch\n        has type : Array[A]\n        wanted   : Json\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:8 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │        ─┬  \n     │         ╰── Expr Type Mismatch\n        has type : B\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:12 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │            ─┬  \n     │             ╰── Expr Type Mismatch\n        has type : C\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        ha…\nle_to_json.mbt:116:7 ]\n     │\n 116 │   H : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:117:7 ]\n     │\n 117 │   I : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:118:7 ]\n     │\n 118 │   J : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:3 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │   ────────────────────┬───────────────────  \n     │                       ╰───────────────────── Expr Type Mismatch\n        has type : Array[A]\n        wanted   : Json\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:8 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │        ─┬  \n     │         ╰── Expr Type Mismatch\n        has type : B\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:12 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │            ─┬  \n     │             ╰── Expr Type Mismatch\n        has type : C\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        ha…"
+        },
+        {
+          "id": "windows/native",
+          "os": "windows",
+          "backend": "native",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "le_to_json.mbt:116:7 ]\n     │\n 116 │   H : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:117:7 ]\n     │\n 117 │   I : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:118:7 ]\n     │\n 118 │   J : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:3 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │   ────────────────────┬───────────────────  \n     │                       ╰───────────────────── Expr Type Mismatch\n        has type : Array[A]\n        wanted   : Json\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:8 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │        ─┬  \n     │         ╰── Expr Type Mismatch\n        has type : B\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:12 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │            ─┬  \n     │             ╰── Expr Type Mismatch\n        has type : C\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        ha…\nle_to_json.mbt:116:7 ]\n     │\n 116 │   H : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:117:7 ]\n     │\n 117 │   I : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nWarning: [0053]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:118:7 ]\n     │\n 118 │   J : ToJson,\n     │       ───┬──  \n     │          ╰──── Warning (unused_trait_bound): This trait bound is unused.\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:3 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │   ────────────────────┬───────────────────  \n     │                       ╰───────────────────── Expr Type Mismatch\n        has type : Array[A]\n        wanted   : Json\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:8 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │        ─┬  \n     │         ╰── Expr Type Mismatch\n        has type : B\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:12 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │            ─┬  \n     │             ╰── Expr Type Mismatch\n        has type : C\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ D:\\a\\toolchain-performance-dashboard\\toolchain-performance-dashboard\\benchmark-core\\builtin\\tuple_to_json.mbt:121:16 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                ─┬  \n     │                 ╰── Expr Type Mismatch\n        ha…"
+        },
+        {
+          "id": "macos/wasm",
+          "os": "macos",
+          "backend": "wasm",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt…\nMismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt…"
+        },
+        {
+          "id": "macos/wasm-gc",
+          "os": "macos",
+          "backend": "wasm-gc",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt…\nMismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt…"
+        },
+        {
+          "id": "macos/js",
+          "os": "macos",
+          "backend": "js",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt…\nMismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt…"
+        },
+        {
+          "id": "macos/native",
+          "os": "macos",
+          "backend": "native",
+          "candidateChannel": "nightly",
+          "status": "failed",
+          "stableMedianMs": null,
+          "candidateMedianMs": null,
+          "deltaPercent": null,
+          "errorSummary": "Mismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt…\nMismatch\n        has type : D\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:20 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                    ─┬  \n     │                     ╰── Expr Type Mismatch\n        has type : E\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:24 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                        ─┬  \n     │                         ╰── Expr Type Mismatch\n        has type : F\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:28 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                            ─┬  \n     │                             ╰── Expr Type Mismatch\n        has type : G\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:32 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                ─┬  \n     │                                 ╰── Expr Type Mismatch\n        has type : H\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt:121:36 ]\n     │\n 121 │   [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]\n     │                                    ─┬  \n     │                                     ╰── Expr Type Mismatch\n        has type : I\n        wanted   : A\n─────╯\nError: [4014]\n     ╭─[ /Users/runner/work/toolchain-performance-dashboard/toolchain-performance-dashboard/benchmark-core/builtin/tuple_to_json.mbt…"
+        }
+      ],
+      "health": {
+        "status": "failed",
+        "totalUnits": 24,
+        "okUnits": 0,
+        "failedUnits": 24,
+        "totalComparisons": 12,
+        "okComparisons": 0,
+        "parseFailures": 0
+      }
+    },
     {
       "schemaVersion": 1,
       "id": "41413488409-1",
