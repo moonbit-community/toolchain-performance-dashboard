@@ -5,6 +5,9 @@ on:
     - cron: "0 2 * * *"
   workflow_dispatch:
 
+env:
+  MOON_SEPARATE_COMPILATION: "1"
+
 concurrency:
   group: moonbit-toolchain-benchmark-data
   cancel-in-progress: false
